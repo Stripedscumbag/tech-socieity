@@ -1,0 +1,290 @@
+tech_society = {
+	primary_attribute = learning
+	opinion_to_other_members = +10
+	opinion_per_rank_above = +5
+	sound = hermetic_society_interface
+	society_ranks_gfx = tech_ranks
+	indestructible = yes
+	society_influence = no
+	is_secret = no
+	is_religious = no
+	devil_worshipper = no
+	non_interference = {
+		FROM = {
+			same_realm = ROOT
+		}
+		FROM = {
+			NOT = {
+				is_foe = ROOT
+			}
+		}
+	}
+
+	can_join_society = {
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = { 
+					society = tech_society
+					rank = 1
+				}
+			}
+		}
+		OR = {
+			learning = 12
+			AND = { #opinion on this?
+				AND = { 
+					learning < 12
+					learning >= 8
+				}
+				OR = {
+					has_focus = focus_scholarship
+					has_focus = focus_theology
+				}
+			}	
+		}
+		hidden_trigger = { mercenary = no }
+		age = 16
+		hidden_trigger = {
+			NOT = { has_character_flag = society_join_block }
+		}
+		trigger_if = {
+			limit = { prisoner = yes }
+			prisoner = no
+		}
+	}
+
+	show_society = {
+		always = yes
+	}
+	
+	society_rank = {
+		level = 1
+		limit = 100
+		startup_limit = 10
+		modifier = {
+			liege_opinion = 10
+		}
+		decisions = {
+			design_toy
+		}
+	}
+	
+	society_rank = {
+		level = 2
+		limit = 50
+		startup_limit = 6
+		modifier = { 
+			learning = 1
+		}
+		decisions = {
+			recruit_to_tech_society
+			basic_artifact_building
+		}
+	}
+	
+	society_rank = {
+		level = 3
+		limit = 25
+		startup_limit = 4
+		modifier = {
+			learning = 2
+			military_techpoints = 0.1
+			economy_techpoints = 0.1
+			culture_techpoints = 0.1
+		}
+		decisions = {
+			invite_mechanic
+			intermediate_artifact_building
+		}
+	}
+
+	society_rank = {
+		level = 4
+		limit = 10
+		startup_limit = 2
+		modifier = { 
+			learning = 3
+			military_techpoints = 0.4
+			economy_techpoints = 0.4
+			culture_techpoints = 0.4
+		}
+		decisions = {
+			pursue_matery
+			advanced_artifact_building
+		}
+	}
+	
+	monthly_currency_gain = {
+		name = currency_name_tech_society # innovativeness
+		
+		per_attribute = {
+    		name = learning
+    		value = 0.5
+    	}
+		has_trait = {
+			value = 2
+			trait = inventor
+		}
+		has_trait = {
+			value = 1
+			trait = scholar
+		}
+		has_trait = {
+			value = 1
+			trait = astrologer
+		}
+		has_trait = {
+			value = 1
+			trait = mechanic
+		}
+		has_trait = {
+			value = 1
+			trait = engineer
+		}
+		has_trait = {
+			value = 1
+			trait = designer
+		}
+		has_trait = {
+			value = 1
+			trait = mystic
+		}
+		has_trait = {
+			value = 1
+			trait = erudite
+		}
+		has_trait = {
+			value = 1
+			trait = stubborn
+		}
+		has_trait = {
+			value = 2
+			trait = diligent
+		}
+		has_trait = {
+			value = 1
+			trait = patient
+		}
+		has_trait = {
+			value = 1.5
+			trait = genius
+		}
+		has_trait = {
+			value = 1
+			trait = quick
+		}
+		has_trait = {
+			value = 0.75
+			trait = shrewd
+		}
+		has_trait = {
+			value = 1
+			trait = just
+		}
+		society_rank = {
+			rank = 4
+			value = 10
+		}
+	}
+
+	member_score_per_attribute = 3
+	member_score_per_rank = 100
+
+	member_score = {
+		value = 10
+
+		modifier = {
+			factor = 2
+			trait = diligent
+		}
+		modifier = {
+			factor = 2
+			trait = inventor
+		}
+		modifier = {
+			factor = 1.5
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.5
+			trait = astrologer
+		}
+		modifier = {
+			factor = 1.5
+			trait = mystic
+		}
+		modifier = {
+			factor = 1.5
+			trait = erudite
+		}
+		modifier = {
+			factor = 1.5
+			trait = stubborn
+		}
+		modifier = {
+			factor = 1.5
+			trait = patient
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				trait = genius
+				trait = quick
+				trait = shrewd
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				trait = mechanic
+				trait = engineer
+				trait = designer
+			}
+		}
+		modifier = {
+			factor = 1.5
+			trait = just
+		}
+	}
+	
+	startup_populate = {
+	    trigger = {
+			ai = yes
+	    	controls_religion = no
+			age = 16
+			is_in_society = no
+			is_dumb_trigger = no
+			OR = {
+				NOT = { is_priest = yes }
+				OR = {
+					trait = mystic
+					trait = scholar
+					trait = cynical
+				}
+			}
+			OR = {
+				AND = {
+					is_landed = yes
+					OR = { 
+						learning = 14
+						trait = scholar
+						trait = erudite
+						trait = genius
+						trait = mystic
+					}
+				}
+				AND = {
+					learning = 18
+					OR = {
+						trait = scholar
+						trait = erudite
+						trait = genius
+						trait = mystic
+						learning = 20
+					}
+				}
+			}
+		}
+	}
+}

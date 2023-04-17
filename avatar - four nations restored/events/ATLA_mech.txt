@@ -1,0 +1,1455 @@
+namespace = MECH
+#Tech society events
+character_event = {
+    id = MECH.1
+	hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+    	FROM = { leader = { society_member_of = tech_society } }
+    }
+    immediate = {
+    	FROM = { leader = { character_event = { id = MECH.2 } } }
+    }
+}
+#Ping event
+character_event = {
+    id = MECH.2
+	hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+    	FROM = { letter_event = { id = MECH.3 } }
+    }
+}
+
+#Welcome letter
+letter_event = {
+    id = MECH.3
+    desc = DESC_tech_society_welcome_letter
+    border = GFX_event_letter_frame_diplomacy
+
+    is_triggered_only = yes
+
+	immediate = {
+		set_character_flag = society_join_block
+	}
+
+    option = {
+        name = tech_society_welcome_letter_option
+		join_society = tech_society
+		clr_character_flag = society_join_block
+    }
+}
+
+letter_event = {
+	id = MECH.4
+	desc = DESC_MECH_4
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTA_MECH4
+		trigger = {
+			NOT = { has_quest = quest_recruit_tech_society }
+		}
+	}
+	
+	option = {
+		name = OPTA_MECH4
+		trigger = {
+			has_quest = quest_recruit_tech_society
+		}
+		change_society_currency = 200
+		clr_quest = quest_recruit_tech_society
+	}
+}
+
+
+	
+	
+character_event = { #pursue mastery
+	id = MECH.10
+	title = TITLE_MECH_10
+	desc = DESC_MECH_10
+	
+	picture = GFX_evt_treasure_chamber
+	
+	is_triggered_only = yes
+	
+	option = { #mechanic
+		name = OPTA_MECH10
+		custom_tooltip = {
+			text = chose_mechanic_mastery
+			set_character_flag = chose_mechanic_mastery
+		}
+		show_trait = mechanic
+		character_event = { id = MECH.11 months = 5 }
+	}
+	
+	option = { #engineer
+		name = OPTB_MECH10
+		custom_tooltip = {
+			text = chose_engineer_mastery
+			set_character_flag = chose_engineer_mastery
+		}
+		show_trait = engineer
+		character_event = { id = MECH.11 months = 5 }
+	}
+	
+	option = { #designer
+		name = OPTC_MECH10
+		custom_tooltip = {
+			text = chose_designer_mastery
+			set_character_flag = chose_designer_mastery
+		}
+		show_trait = designer
+		character_event = { id = MECH.11 months = 5 }
+	}
+}
+
+character_event = { #effort
+	id = MECH.11
+	title = TITLE_MECH_11
+	desc = DESC_MECH_11
+	
+	picture = GFX_evt_weaponsmith
+	
+	is_triggered_only = yes
+	
+	option = { #ill take my time
+		trigger = { NOT = { has_character_flag = chose_mechanic_mastery } }
+		name = OPTA_MECH11
+		random = {
+			chance = 50
+			add_trait = patient
+		}
+		character_event = { id = MECH.12 months = 5 }
+	}
+	
+	option = { #WHY CANT I DO IT?
+		name = OPTB_MECH11
+		trigger = {
+			NOT = { has_character_flag = chose_designer_mastery }
+		}
+		random = {
+			chance = 50
+			add_trait = wroth
+		}
+		character_event = { id = MECH.12 months = 5 }
+	}
+}
+
+character_event = { #make an investment
+	id = MECH.12
+	title = TITLE_MECH_12
+	desc = DESC_MECH_12
+	
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+	
+	option = { #hard work gives big reward
+		name = OPTA_MECH12
+		trigger = {
+			NAND = {
+				has_character_flag = chose_designer_mastery
+				combat_rating < 40
+			}
+		}
+		random = {
+			chance = 20
+			add_trait = diligent
+		}
+		wealth = -50
+		character_event = { id = MECH.13 months = 5 }
+	}
+	
+	option = { #should i be bothered?
+		name = OPTB_MECH12
+		random = {
+			chance = 50
+			add_trait = slothful
+		}
+		piety = -20
+		character_event = { id = MECH.13 months = 5 }
+	}
+}
+
+character_event = { #almost there
+	id = MECH.13
+	title = TITLE_MECH_13
+	desc = DESC_MECH_13
+	
+	picture = GFX_evt_hunting_scene
+	
+	is_triggered_only = yes
+	
+	option = { #do something creative
+		trigger = {
+			OR = {
+				has_character_flag = chose_designer_mastery
+				diplomacy = 12
+			}
+		}
+		name = OPTA_MECH13
+		random = {
+			chance = 80
+			add_character_modifier = {
+				name = creative
+				years = 5
+			}
+		}
+		character_event = { id = MECH.14 months = 2 }
+	}
+	
+	option = { #do some hard labour
+		trigger = {
+			NAND = {
+				has_character_flag = chose_designer_mastery
+				martial < 15
+			}
+		}		
+		name = OPTB_MECH13
+		random = {
+			chance = 15
+			add_trait = robust
+		}
+		prestige = 50
+		character_event = { id = MECH.14 months = 2 }
+	}
+	
+	option = { Leave it for tomorrow
+		name = OPTC_MECH13
+		trigger = {
+			NAND = {
+				has_character_flag = mechanic
+				stewardship < 13
+			}
+		}
+		random = {
+			chance = 50
+			remove_trait = stressed
+		}
+		random = {
+			chance = 10
+			add_trait = slothful
+		}
+	}
+}
+
+character_event = { #recieve lifestyle trait
+	id = MECH.14
+	title = TITLE_MECH_14
+	
+	picture = GFX_evt_noble_in_castle
+	
+	desc = {
+		trigger = { has_character_flag = chose_mechanic_mastery }
+		text = DESC_MECH_14A
+	}
+	desc = {
+		trigger = { has_character_flag = chose_engineer_mastery }
+		text = DESC_MECH_14B
+	}
+	desc = {
+		trigger = { has_character_flag = chose_designer_mastery }
+		text = DESC_MECH_14C
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTA_MECH14
+		trigger = { has_character_flag = chose_mechanic_mastery }
+		add_trait = mechanic
+		change_society_currency = 100
+	}
+	option = {
+		name = OPTB_MECH14
+		trigger = { has_character_flag = chose_engineer_mastery }
+		add_trait = engineer
+		change_society_currency = 100
+	}
+	option = {
+		name = OPTC_MECH14
+		trigger = { has_character_flag = chose_designer_mastery }
+		add_trait = designer
+		change_society_currency = 100
+	}
+	
+	after = {
+		remove_character_modifier = pursue_mastery_tech_society
+		letter_event = { id = MECH.1103 days = 2 }
+	}
+}
+
+character_event = { #invite mechanic yes or no
+	id = MECH.20
+	title = TITLE_MECH_20
+	desc = DESC_MECH_20
+	
+	picture = GFX_evt_emissary
+	
+	portrait = ROOT
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:invited_character = {
+			join_society = tech_society
+		}
+	}
+	
+	option = {
+		name = OPTA_MECH20
+	}
+	
+	option = {
+		name = OPTB_MECH20
+		hidden_tooltip = {
+			event_target:invited_character = {
+				death = yes
+			}
+		}
+	}
+}
+#design toy
+character_event = {
+	id = MECH.100
+	title = TITLE_MECH_100
+	desc = DESC_MECH_100
+	
+	picture = GFX_evt_gathering_of_minds
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { which = toy_quality value = 0 }
+	}
+	
+	option = {
+		name = OPTA_MECH100
+		random = {
+			chance = 40
+			add_trait = stressed
+		}
+		custom_tooltip = {
+			text = toy_quality_mid_improvement_TT
+			change_variable = { which = toy_quality value = 2 }
+		}
+		character_event = { id = MECH.101 days = 30 }
+	}
+	
+	option = {
+		name = OPTB_MECH100
+		custom_tooltip = {
+			text = toy_quality_bad_improvement_TT
+			set_variable = { which = toy_quality value = 1 }
+		}
+		character_event = { id = MECH.101 days = 30 }
+	}
+	
+	option = {
+		name = OPTC_MECH100
+		trigger = { has_trait = diligent }
+		custom_tooltip = {
+			text = toy_quality_mid_improvement_TT
+			change_variable = { which = toy_quality value = 2 }
+		}
+		character_event = { id = MECH.101 days = 30 }
+	}
+}
+
+character_event = { # build the toy
+	id = MECH.101
+	title = TITLE_MECH_101
+	desc = DESC_MECH_101
+	
+	picture = GFX_evt_market_byzantine
+	
+	is_triggered_only = yes
+	
+	option = { #cheap
+		name = OPTA_MECH101
+		prestige = -50
+		wealth = -10
+		custom_tooltip = {
+			text = toy_quality_bad_improvement_TT
+			set_variable = { which = toy_quality value = 1 }
+		}
+		character_event = { id = MECH.102 days = 30 }
+	}
+	
+	option = { #inbetween
+		name = OPTB_MECH101
+		wealth = -30
+		custom_tooltip = {
+			text = toy_quality_mid_improvement_TT
+			change_variable = { which = toy_quality value = 2 }
+		}
+		character_event = { id = MECH.102 days = 30 }
+	}
+	
+	option = { #expensive
+		name = OPTC_MECH101
+		wealth = -50
+		custom_tooltip = {
+			text = toy_quality_good_improvement_TT
+			change_variable = { which = toy_quality value = 3 }
+		}
+		character_event = { id = MECH.102 days = 30 }
+	}
+	
+	option = { #DIY
+		name = OPTD_MECH101
+		prestige = 50
+		custom_tooltip = {
+			text = toy_design_DIY_TT
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 2
+						has_trait = slothful
+					}
+					modifier = {
+						factor = 1.5
+						wealth < 0
+					}
+				}
+				34 = {
+					custom_tooltip = {
+						text = toy_quality_bad_improvement_TT
+						set_variable = { which = toy_quality value = 1 }
+					}
+					modifier = {
+						factor = 0
+						has_trait = diligent
+					}
+					modifier = {
+						factor = 2
+						has_trait = slothful
+					}
+				}
+				33 = {
+					custom_tooltip = {
+						text = toy_quality_mid_improvement_TT
+						change_variable = { which = toy_quality value = 2 }
+					}
+				}
+				33 = {
+					custom_tooltip = {
+						text = toy_quality_good_improvement_TT
+						change_variable = { which = toy_quality value = 3 }
+					}
+					modifier = {
+						factor = 2
+						learning = 16
+					}
+					modifier = {
+						factor = 1.5
+						has_trait = inventor
+					}
+				}
+			}
+		}
+		character_event = { id = MECH.102 days = 30 }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 4
+				has_trait = greedy
+			}
+		}
+	}
+}
+
+character_event = { #decorate toy
+	id = MECH.102
+	title = TITLE_MECH_102
+	desc = DESC_MECH_102
+	
+	picture = GFX_evt_relaxed_ruler
+	
+	is_triggered_only = yes
+	
+	option = { #leave as is
+		name = OPTA_MECH102
+		random = {
+			chance = 10
+			add_trait = slothful
+		}
+		custom_tooltip = { text = toy_quality_no_improvement_TT }
+		character_event = { id = MECH.103 days = 30 }
+	}
+	
+	option = {
+		name = OPTB_MECH102 # there are no mistakes, just happy accidents
+		custom_tooltip = {
+			text = toy_quality_bad_improvement_TT
+			set_variable = { which = toy_quality value = 1 }
+		}
+		random = {
+			chance = 10
+			add_trait = humble
+		}
+		character_event = { id = MECH.103 days = 30 }
+	}
+	
+	option = {
+		name = OPTC_MECH102
+		custom_tooltip = {
+			text = toy_quality_mid_improvement_TT
+			change_variable = { which = toy_quality value = 2 }
+		}
+		random = {
+			chance = 20
+			add_trait = fatigue
+		}
+		character_event = { id = MECH.103 days = 30 }
+	}
+}
+
+character_event = { #finished product
+	id = MECH.103
+	title = TITLE_MECH_103
+	desc = DESC_MECH_103
+	
+	picture = GFX_evt_child_talking_arabic
+	
+	is_triggered_only = yes
+	
+	option = { # bad outcome
+		name = OPTA_MECH103
+		trigger = {
+			check_variable = {
+				which =	toy_quality
+				value <= 5
+			}
+		}
+		random_list = {
+			50 = {
+				culture_techpoints = 10
+			}
+			50 = {
+				economy_techpoints = 10
+			}
+		}
+		letter_event = { id = MECH.1101 }
+		prestige = -100
+		random_child = {
+			preferred_limit = { age < 8 }
+			preferred_limit = { is_adult = no }
+			preferred_limit = { age < 21 }
+			opinion = {
+				name = opinion_toy_bad
+				who = ROOT
+			}
+		}
+	}
+	
+	option = { # mid outcome
+		name = OPTB_MECH103
+		trigger = {
+			check_variable = {
+				which =	toy_quality
+				value >= 6
+			}
+			check_variable = {
+				which =	toy_quality
+				value <= 8
+			}
+		}
+		random_list = {
+			50 = {
+				culture_techpoints = 30
+			}
+			50 = {
+				economy_techpoints = 30
+			}
+		}
+		letter_event = { id = MECH.1100 }
+		prestige = 20
+		random_child = {
+			preferred_limit = { age < 8 }
+			preferred_limit = { is_adult = no }
+			preferred_limit = { age < 21 }
+			opinion = {
+				name = opinion_toy_mid
+				who = ROOT
+			}
+		}
+	}
+	
+	option = { # good outcome
+		name = OPTC_MECH103
+		trigger = {
+			check_variable = {
+				which =	toy_quality
+				value >= 9
+			}
+		}
+		random_list = {
+			50 = {
+				culture_techpoints = 50
+			}
+			50 = {
+				economy_techpoints = 50
+			}
+		}
+		prestige = 100
+		change_society_currency = 150
+		letter_event = { id = MECH.1100 }
+		random_child = {
+			preferred_limit = { age < 8 }
+			preferred_limit = { is_adult = no }
+			preferred_limit = { age < 21 }
+			opinion = {
+				name = opinion_toy_good
+				who = ROOT
+			}
+		}
+	}
+}
+
+
+character_event = { #build a factory
+	id = MECH.110
+	title = TITLE_MECH_110
+	desc = DESC_MECH_110
+	
+	picture = GFX_evt_castle_construction
+	
+	is_triggered_only = yes
+	
+	option = { #100% succes
+		name = OPTA_MECH110
+		wealth = -250
+		character_event = { id = MECH.111 months = 6 }
+		custom_tooltip = { text = quest_build_factory_TT }
+	}
+	
+	option = { #100% succes
+		name = OPTB_MECH110
+		wealth = -100
+		change_society_currency = -250
+		character_event = { id = MECH.111 months = 6 }
+		custom_tooltip = { text = quest_build_factory_TT }
+	}
+	
+	option = { #50% succes
+		NAME = OPTC_MECH110
+		wealth = -50
+		change_society_currency = -250
+		custom_tooltip = { text = quest_build_factory_TT_5050 }
+		random_list = {
+			50 = {
+				character_event = { id = MECH.111 months = 6 }
+			}
+			50 = {
+				character_event = { id = MECH.112 months 6 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = MECH.111
+	title = TITLE_MECH_111
+	desc = DESC_MECH_111
+	
+	picture = GFX_evt_fire_factory
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTA_MECH111
+		random_demesne_province = {
+			limit = {
+				has_hospital = no
+			}
+			build_holding = {
+				type = hospital
+			}
+		}
+		character_event = { id = MECH.1102 }
+		wealth = 50
+	}
+}
+
+character_event = { #failed to build, maybe put painted lady reference?
+	id = MECH.112
+	title = TITLE_MECH_112
+	desc = DESC_MECH_112
+	
+	picture = GFX_evt_construction_site
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTA_MECH112
+		wealth = -50
+		set_character_flag = failed_factory_quest
+		character_event = { id = MECH.1102 }
+	}
+}
+
+character_event = { #inspirational walk 
+	id = MECH.120
+	title = TITLE_MECH_120
+	desc = DESC_MECH_120
+	
+	picture = GFX_evt_stressed_ruler
+	
+	is_triggered_only = yes
+	
+	option = { #courtyard
+		name = OPTA_MECH120
+		custom_tooltip = { text = inspirational_quest_tt_1 }
+		character_event = { id = MECH.121 }
+	}
+	
+	option = { #town
+		name = OPTB_MECH120
+		custom_tooltip = { text = inspirational_quest_tt_2 }
+		character_event = { id = MECH.128 }
+	}
+}
+
+character_event = { #courtyard
+	id = MECH.121
+	title = TITLE_MECH_121
+	desc = DESC_MECH_121
+	
+	picture = GFX_evt_charity
+	
+	is_triggered_only = yes
+	
+	option = { #talk to gardener
+		name = OPTA_MECH121
+		custom_tooltip = { text = inspirational_quest_tt_3 }
+		character_event = { id = MECH.122 }
+		random = {
+			chance = 20
+			change_stewardship = 1
+		}
+	}
+	
+	option = { #talk to random courtier
+		name = OPTB_MECH121
+		custom_tooltip = { text = inspirational_quest_tt_4 }
+		random = {
+			chance = 20
+			change_diplomacy = 1
+		}
+		character_event = { id = MECH.125 }
+	}
+}
+
+character_event = { #talk to gardener
+	id = MECH.122
+	title = TITLE_MECH_122
+	desc = DESC_MECH_122
+	
+	is_triggered_only = yes
+	
+	picture = GFX_evt_garden
+	
+	option = { #he tells you alot about flowers
+		name = OPTA_MECH122
+		custom_tooltip = { text = inspirational_quest_tt_5 } # flowers are fascinating
+		character_event = { id = MECH.123 }
+		random = {
+			chance = 33
+			change_learning = 1
+		}
+	}
+	
+	option = {  #"These smell lovely!"
+		name = OPTB_MECH122
+		custom_tooltip = { text = inspirational_quest_tt_6 } #take a flower
+		add_character_modifier = {
+			name = beautiful_flower
+			years = 1
+		}
+		character_event = { id = MECH.124 }
+	}
+}
+
+character_event = { #learned about flowers
+	id = MECH.123
+	title = TITLE_MECH_123
+	desc = DESC_MECH_123
+	
+	picture = GFX_evt_castle_garden
+	
+	is_triggered_only = yes
+	
+	option = { # finally inspired
+		name = OPTA_MECH123
+		custom_tooltip = { text = inspirational_quest_tt_7 } # time to get back to work!
+		letter_event = { id = MECH.1104 }
+	}	
+}
+
+character_event = { #took a flower
+	id = MECH.124
+	title = TITLE_MECH_124
+	desc = DESC_MECH_124
+	
+	picture = GFX_evt_homage_hf
+	
+	is_triggered_only = yes
+	
+	option = { # the ladies will love this!
+		name = OPTA_MECH124 # use He/She loc
+		custom_tooltip = { text = inspirational_quest_tt_8 } # time to get back to work!
+		random = {
+			chance = 75
+			add_trait = flirtatious
+		}
+		letter_event = { id = MECH.1104 }
+	}	
+}
+
+character_event = { #talk to random courtier
+	id = MECH.125
+	title = TITLE_MECH_125
+	desc = DESC_MECH_125
+	
+	picture = GFX_evt_courtiers_talking
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			preferred_limit = {
+				dynasty = none
+				female = no #lazy loc
+			}
+			limit = {
+				is_adult = yes
+				is_incapable = no
+				is_abroad = no
+			}
+			save_event_target_as = inspiration_courtier
+		}
+	}
+	
+	portrait = event_target:inspiration_courtier
+	
+	option = { #engage in debate
+		name = OPTA_MECH125
+		custom_tooltip = { text = inspirational_quest_tt_9 } # wait.. you are right!
+		character_event = { id = MECH.126 }
+		random = {
+			chance = 33
+			change_learning = 1
+		}
+	}
+	
+	option = {  #listen to their story
+		name = OPTB_MECH125
+		custom_tooltip = { text = inspirational_quest_tt_10 } # poor soul...ill be nicer to people from now on
+		event_target:inspiration_courtier = {
+			random = {
+				chance = 50
+				add_trait = depressed
+			}
+		}
+		add_trait = kind
+		character_event = { id = MECH.127 }
+	}
+}
+
+character_event = { #debated with random courtier
+	id = MECH.126
+	title = TITLE_MECH_126
+	desc = DESC_MECH_126
+	
+	picture = GFX_evt_died_child
+	
+	is_triggered_only = yes
+	
+	portrait = event_target:inspiration_courtier
+	
+	option = { # after debate
+		name = OPTA_MECH126
+		custom_tooltip = { text = inspirational_quest_tt_11 } # this man has corrected some of my misconceptions
+		letter_event = { id = MECH.1104 }
+		add_character_modifier = {
+			name = took_stroll_small_talk
+			years = 1
+		}
+	}
+}
+
+character_event = { #heard out sad courtier
+	id = MECH.127
+	title = TITLE_MECH_127
+	desc = DESC_MECH_127
+	
+	picture = GFX_evt_died_child
+	
+	is_triggered_only = yes
+	
+	portrait = event_target:inspiration_courtier
+	
+	option = { # after hearing out
+		name = OPTA_MECH127
+		custom_tooltip = { text = inspirational_quest_tt_12 } # i must reflect on life
+		letter_event = { id = MECH.1104 }
+	}
+}
+
+character_event = { #town
+	id = MECH.128
+	title = TITLE_MECH_128
+	desc = DESC_MECH_128
+	
+	picture = GFX_evt_leaning_tower
+	
+	is_triggered_only = yes
+	
+	option = { #talk to shopkeeper
+		name = OPTA_MECH128
+		custom_tooltip = { text = inspirational_quest_tt_13 }
+		character_event = { id = MECH.129 }
+	}
+	
+	option = { #go out of town
+		name = OPTB_MECH128
+		custom_tooltip = { text = inspirational_quest_tt_14 }
+		character_event = { id = MECH.132 }
+	}
+}
+
+character_event = { #talk to shopkeeper
+	id = MECH.129
+	title = TITLE_MECH_129
+	desc = DESC_MECH_129
+	
+	picture = GFX_evt_construction_site
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 32
+			health = 6
+			fertility = 0.8
+			
+			attributes = {
+				stewardship = 8
+				learning = 7
+			}
+			
+			add_trait = charitable
+		}
+		
+		new_character = { save_event_target_as = shopkeeper_inspiration }
+	}
+	
+	portrait = ROOT
+	
+	option = { #buy his artwork
+		name = OPTA_MECH129
+		wealth = -30
+		add_character_modifier = {
+			name = bought_art
+			years = 2
+		}
+		custom_tooltip = { text = inspirational_quest_tt_15 }
+		character_event = { id = MECH.130 }
+	}
+	
+	option = { #discuss art
+		name = OPTB_MECH129
+		custom_tooltip = { text = inspirational_quest_tt_16 }
+		character_event = { id = MECH.131 }
+	}
+}
+
+character_event = { #artwork bought
+	id = MECH.130
+	title = TITLE_MECH_130
+	desc = DESC_MECH_130
+	
+	picture = GFX_evt_jugglers
+	
+	is_triggered_only = yes
+	
+	portait = event_target:shopkeeper_inspiration
+	
+	option = { #he tells story about artwork
+		name = OPTA_MECH130
+		piety = 50
+		prestige = 100
+		custom_tooltip = { text = inspirational_quest_tt_17 }
+		character_event = { id = MECH.135 }
+	}
+}
+
+character_event = { #discussed art
+	id = MECH.131
+	title = TITLE_MECH_131
+	desc = DESC_MECH_131
+	
+	picture = GFX_evt_market_byzantine
+	
+	is_triggered_only = yes
+	
+	portait = event_target:shopkeeper_inspiration
+	
+	option = { #im not into abstract art
+		name = OPTA_MECH131
+		random = {
+			chance = 40
+			change_diplomacy = 1
+		}
+		custom_tooltip = { text = inspirational_quest_tt_18 }
+		character_event = { id = MECH.135 }
+	}
+}
+
+character_event = { #out of town
+	id = MECH.132
+	title = TITLE_MECH_132
+	desc = DESC_MECH_132
+	
+	picture = GFX_evt_travelling_warrior
+	
+	is_triggered_only = yes
+	
+	option = { #walk to a farm
+		name = OPTA_MECH132
+		random = {
+			chance = 10
+			add_trait = gregarious
+		}
+		custom_tooltip = { text = inspirational_quest_tt_19 }
+		character_event = { id = MECH.133 }
+	}
+	
+	option = { #walk into the forest
+		name = OPTB_MECH132
+		random = {
+			chance = 10
+			add_trait = temperate
+		}
+		custom_tooltip = { text = inspirational_quest_tt_20 }
+		character_event = { id = MECH.134 }
+	}
+}
+
+character_event = { #walked to farm
+	id = MECH.133
+	title = TITLE_MECH_133
+	desc = DESC_MECH_133
+	
+	picture = GFX_evt_landscape_3
+	
+	is_triggered_only = yes
+	
+	option = { #i'd love some tea!
+		name = OPTA_MECH133
+		add_character_modifier = {
+			name = had_tea_recently
+			months = 3
+		}
+		custom_tooltip = { text = inspirational_quest_tt_21 }
+		character_event = { id = MECH.135 }
+	}
+}
+
+character_event = { #walked to forest
+	id = MECH.134
+	title = TITLE_MECH_134
+	desc = DESC_MECH_134
+	
+	picture = GFX_evt_landscape_1
+	
+	is_triggered_only = yes
+	
+	option = { #encounter random spirit
+		name = OPTA_MECH134
+		random = {
+			chance = 50
+			add_trait = zealous
+		}
+		custom_tooltip = { text = inspirational_quest_tt_22 }
+		character_event = { id = MECH.135 }
+	}
+}
+
+character_event = { #home if went to town or out
+	id = MECH.135
+	title = TITLE_MECH_135
+	desc = DESC_MECH_135
+	
+	picture = GFX_evt_magnificent_castle
+	
+	is_triggered_only = yes
+	
+	option = { #im motivated
+		name = OPTA_MECH135
+		random = {
+			chance = 5
+			remove_trait = stressed
+		}
+		letter_event = { id = MECH.1104 }
+	}
+}
+
+#toombla tombola
+character_event = {
+	id = MECH.1000
+	hide_window = yes
+	
+	is_triggered_only = yes #by the epic toombla!!
+	is_in_society = yes
+	only_capable = yes
+
+	trigger = {
+		society_member_of = tech_society
+		is_society_grandmaster = no
+		has_any_quest = no
+		NOT = { is_inaccessible_trigger = yes }
+		NOT = { has_character_modifier = quest_cooldown_timer }	
+	}
+
+	immediate = {
+		random_society_member = {
+			limit = {
+				is_society_grandmaster = yes
+				same_society_as = ROOT
+			}
+			save_event_target_as = grandmaster
+		}
+		event_target:grandmaster = { character_event = { id = MECH.2000 } }	
+	}
+}
+society_quest_event = {
+	id = MECH.1001
+	desc = desc_quest_design_toy
+	border = GFX_event_letter_frame_learning
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACCEPT
+		set_quest = quest_design_toy
+	}
+	option = {
+		name = DECLINE
+		custom_tooltip = { text = decline_quest_tooltip }
+
+		add_character_modifier = {
+			name = quest_cooldown_timer
+			hidden = yes
+			days = 1000
+		}
+
+		ai_chance = { factor = 0 }
+	}
+}
+
+society_quest_event = {
+	id = MECH.1002
+	desc = desc_quest_recruit_to_tech_society
+	border = GFX_event_letter_frame_learning
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACCEPT
+		set_quest = quest_recruit_tech_society
+	}
+	option = {
+		name = DECLINE
+		custom_tooltip = { text = decline_quest_tooltip }
+
+		add_character_modifier = {
+			name = quest_cooldown_timer
+			hidden = yes
+			days = 1000
+		}
+
+		ai_chance = { factor = 0 }
+	}
+}
+
+society_quest_event = {
+	id = MECH.1003
+	desc = desc_quest_build_factory
+	border = GFX_event_letter_frame_learning
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACCEPT
+		custom_tooltip = { text = build_factory_tt }
+		set_quest = quest_build_factory
+	}
+	option = {
+		name = DECLINE
+		custom_tooltip = { text = decline_quest_tooltip }
+
+		add_character_modifier = {
+			name = quest_cooldown_timer
+			hidden = yes
+			days = 1000
+		}
+
+		ai_chance = { factor = 0 }
+	}
+}
+
+society_quest_event = {
+	id = MECH.1004
+	desc = desc_quest_pursue mastery #pursue mastery target decision
+	border = GFX_event_letter_frame_learning
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACCEPT 
+		set_quest = quest_pursue_mastery
+	}
+	option = {
+		name = DECLINE
+		custom_tooltip = { text = decline_quest_tooltip }
+
+		add_character_modifier = {
+			name = quest_cooldown_timer
+			hidden = yes
+			days = 1000
+		}
+
+		ai_chance = { factor = 0 }
+	}
+}
+
+society_quest_event = {
+	id = MECH.1005
+	desc = desc_quest_inspiration #go out for inspiration
+	border = GFX_event_letter_frame_learning
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACCEPT 
+		set_quest = quest_inspiration
+	}
+	option = {
+		name = DECLINE
+		custom_tooltip = { text = decline_quest_tooltip }
+
+		add_character_modifier = {
+			name = quest_cooldown_timer
+			hidden = yes
+			days = 1000
+		}
+
+		ai_chance = { factor = 0 }
+	}
+}
+
+letter_event = {
+	id = MECH.1100
+	desc = quest_design_toy_succes_desc
+	border = GFX_event_letter_frame_diplomacy
+	is_triggered_only = yes
+	
+	trigger = {
+		has_quest = quest_design_toy
+	}
+	
+	option = {
+		name = quest_design_toy_succes_option
+		clr_quest = quest_design_toy
+		change_society_currency = 200
+		clr_character_flag = design_toy_cflag
+	}
+}
+
+letter_event = {
+	id = MECH.1101
+	desc = quest_design_toy_fail_desc
+	border = GFX_event_letter_frame_diplomacy
+	is_triggered_only = yes
+	
+	trigger = {
+		has_quest = quest_design_toy
+	}
+	
+	option = {
+		name = quest_design_toy_fail_option
+		clr_quest = quest_design_toy
+		change_society_currency = 50
+		clr_character_flag = design_toy_cflag
+	}
+}
+
+letter_event = {
+	id = MECH.1102
+	desc = {
+		trigger = {
+			NOT = { has_character_flag = failed_factory_quest }
+		}
+		text = succes_factory_quest_desc
+	}
+	desc = {
+		trigger = {
+			has_character_flag = failed_factory_quest
+		}
+		text = failed_factory_quest_desc
+	}
+	border = GFX_event_letter_frame_diplomacy
+	is_triggered_only = yes
+	
+	trigger = {
+		has_quest = quest_build_factory
+		society_member_of = tech_society
+	}
+	
+	option = {
+		name = quest_build_factory_succes_option
+		trigger = {
+			NOT = { has_character_flag = failed_factory_quest }
+		}
+		clr_quest = quest_build_factory
+		change_society_currency = 200
+		clr_character_flag = build_factory_cflag
+	}
+	
+	option = {
+		name = quest_build_factory_fail_option
+		trigger = {
+			has_character_flag = failed_factory_quest
+		}
+		clr_quest = quest_build_factory
+		clr_character_flag = build_factory_cflag
+	}
+}
+
+letter_event = {
+	id = MECH.1103
+	desc = quest_pursue_mastery_succes_desc
+	border = GFX_event_letter_frame_diplomacy
+	is_triggered_only = yes
+	
+	trigger = {
+		has_quest = quest_pursue_mastery
+	}
+	
+	option = {
+		name = quest_pursue_mastery_option
+		clr_quest = quest_pursue_mastery
+		change_society_currency = 500
+		clr_character_flag = tech_society_mastery_cflag
+	}
+	
+}
+
+letter_event = {
+	id = MECH.1104
+	desc = quest_inspiration_succes_desc
+	border = GFX_event_letter_frame_diplomacy
+	is_triggered_only = yes
+	
+	trigger = {
+		has_quest = quest_inspiration
+	}
+	
+	option = {
+		name = quest_inspiration_option
+		clr_quest = quest_inspiration
+		change_society_currency = 300
+		add_character_modifier = {
+			name = inspired_by_walk
+			years = 1
+		}
+		clr_character_flag = on_inspiration_walk_cflag
+	}
+	
+}
+
+#toombla tombala
+character_event = {
+	id = MECH.2000
+	hide_window = yes
+
+	is_triggered_only = yes
+	is_in_society = yes
+	only_capable = yes
+	
+	immediate = {
+		FROM = {
+			random_list = {
+				20 = {}
+				15 = { # Design toy
+					modifier = {
+						factor = 0.8
+						society_rank = 2
+					}
+					character_event = { id = MECH.1001 }
+				}
+				5 = { # Recruit to society
+					character_event = { id = MECH.1002 }
+					modifier = {
+						factor = 0
+						has_character_modifier = recently_recruited_to_tech_society
+					}
+					modifier = {
+						factor = 0
+						society_rank < 2
+					}
+				}
+				100 = { #Build a factory
+					character_event = { id = MECH.1003 }
+					modifier = {
+						factor = 0.01
+						society_rank < 2
+					}
+					modifier = {
+						factor = 0
+						REAL_TIER >= COUNT
+					}
+					modifier = {
+						factor = 0.02
+						any_demesne_province = {
+							has_hospital = yes
+						}
+					}
+				}
+				20 = { #pursue mastery
+					character_event = { id = MECH.1004 }
+					modifier = {
+						factor = 0
+						society_rank < 4
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							has_character_modifier = pursue_mastery_tech_society
+							has_trait = mechanic
+							has_trait = engineer
+							has_trait = designer
+						}
+					}
+				}
+				35 = { #go out for inspiration
+					character_event = { id = MECH.1005 }
+					modifier = {
+						factor = 1.5
+						has_trait = designer
+					}
+				}
+			}
+		}
+	}
+}

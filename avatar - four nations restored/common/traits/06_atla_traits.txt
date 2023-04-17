@@ -1311,9 +1311,12 @@ inventor = {
 	learning = 5
 	opposites =  {
 		apathetic
+		true_inventor
 	}
 	same_opinion = 20
 }
+
+
 
 thief = {
 	customizer = no
@@ -2792,4 +2795,48 @@ avatar_on_training = {
 	pilgrimage = no
 	customizer = no
 	random = no
+}
+
+mechanic = {
+	lifestyle = yes
+
+	learning = 3
+	stewardship = 2
+	military_techpoints = 0.1
+	economy_techpoints = 0.1
+	culture_techpoints = 0.1
+	opposites =  {
+		apathetic
+		inventor
+	}
+	same_opinion = 20
+}
+
+engineer = {
+	lifestyle = yes
+
+	learning = 3
+	martial = 2
+	military_techpoints = 0.15
+	economy_techpoints = 0.15
+	opposites =  {
+		apathetic
+		inventor
+	}
+	same_opinion = 20
+}
+
+designer = {
+	lifestyle = yes
+
+	learning = 3
+	intrigue = 1
+	diplomacy = 1
+	economy_techpoints = 0.15
+	culture_techpoints = 0.15
+	opposites =  {
+		apathetic
+		inventor
+	}
+	same_opinion = 20
 }

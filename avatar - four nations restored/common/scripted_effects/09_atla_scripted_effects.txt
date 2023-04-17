@@ -665,3 +665,95 @@ add_ascetic_trait_effect = {
 		add_trait = fire_sage
 	}
 }
+
+#Invite "Mechanic", Tech Society
+
+invite_mechanic_tech_society = {
+	new_character = {
+		remove_trait = weak
+		remove_trait = slow
+		remove_trait = imbecile
+		remove_trait = dull
+		
+		remove_trait = mystic
+		remove_trait = socializer
+		remove_trait = gamer
+		remove_trait = hedonist
+		remove_trait = duelist
+		remove_trait = hunter
+		remove_trait = strategist
+		remove_trait = administrator
+		remove_trait = architect
+		remove_trait = gardener
+		remove_trait = schemer
+		remove_trait = impaler
+		remove_trait = seducer
+		remove_trait = seductress
+		remove_trait = theologian
+		remove_trait = scholar
+		
+		add_trait = inventor
+		
+		random_list = { # Flavor Randomization
+			35 = { 
+				# Nothing
+			}
+			15 = {
+				change_learning = 2
+			}
+			10 = {
+				add_trait = quick
+			}
+			10 = {
+				add_trait = shrewd
+			}
+			10 = {
+				add_trait = erudite
+			}
+			5 = {
+				add_trait = scholar
+			}
+			5 = {
+				change_learning = 4
+			}
+			5 = {
+				add_trait = one_eyed
+			}
+			5 = { 
+				add_trait = genius
+			}
+			3 = { 
+				add_trait = fragile
+			}
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_religion_feature = religion_astrology
+				}
+				hidden_tooltip = { add_western_zodiac_trait_effect = yes }
+			}
+			if = {
+				limit = {
+					has_religion_feature = religion_no_leader
+				}
+				random_list = {  
+					5 = {
+						add_trait = pagan_branch_1
+					}
+					25 = {
+						add_trait = pagan_branch_2
+					}
+					25 = {
+						add_trait = pagan_branch_3
+					}
+					25 = {
+						add_trait = pagan_branch_4
+					}
+				}
+			}
+		}
+		set_character_flag = invited_mechanic
+		save_event_target_as = invited_character
+	}
+}

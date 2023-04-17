@@ -7787,3 +7787,40 @@ failed_gauntlet = {
 gauntlet_modifier = {
 	icon = 79
 }
+
+recently_invited_mechanic = {
+	icon = 1
+}
+
+recently_recruited_to_tech_society = {
+	icon = 1
+}
+
+design_toy_cooldown = {
+	icon = 1
+}
+
+pursue_mastery_tech_society = {
+	icon = 86
+	diplomacy = -2
+	martial = -2
+	stewardship = -2
+	intrigue = -2
+	learning = -2
+}
+
+creative = {
+	icon = 18
+	learning = 1
+	stewardship = 1
+}
+
+inspired_by_walk = {
+	icon = 87
+	learning = 1
+	diplomacy = 1
+}
+bought_art = {
+	icon = 7
+	monthly_character_prestige = 0.5
+}

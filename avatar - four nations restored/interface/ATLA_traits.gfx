@@ -1251,5 +1251,26 @@ spriteTypes = {
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
-	}	
+	}
+	spriteType = {
+		name = "GFX_trait_mechanic"
+		texturefile = "gfx/traits/mechanic.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_engineer"
+		texturefile = "gfx/traits/engineer.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_designer"
+		texturefile = "gfx/traits/designer.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
 }

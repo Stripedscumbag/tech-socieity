@@ -735,4 +735,28 @@ spriteTypes = {
 		name = "GFX_icon_fire_imperial_government"
 		texturefile = "gfx\\interface\\government_icon_fire_imperial.dds"
 	}
+	spriteType = {
+		name = "GFX_society_main_background_tech_society"
+		texturefile = "gfx\\interface\\societies\\society_bg_tech.dds"
+	}
+	spriteType = {
+		name = "GFX_icon_small_tech_society"
+		texturefile = "gfx\\interface\\societies\\society_symbol_tech.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_tech_ranks"
+		texturefile = "gfx\\interface\\societies\\rank_icons_tech.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_tech_ranks_highlight"
+		texturefile = "gfx\\interface\\societies\\rank_icons_tech_highlight.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_tech_ranks_locked"
+		texturefile = "gfx\\interface\\societies\\rank_icons_tech_locked.dds"
+		noOfFrames = 4
+	}
 }

@@ -4662,3 +4662,15 @@ opinion_talked_about_society = {
 	opinion = 35
 	months = 4
 }
+opinion_toy_bad = {
+	opinion = -20
+	years = 2
+}
+opinion_toy_mid = {
+	opinion = 10
+	years = 2
+}
+opinion_toy_good = {
+	opinion = 50
+	years = 2
+}

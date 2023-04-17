@@ -1,0 +1,192 @@
+decisions = {
+
+	design_toy = {
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			society_member_of = tech_society
+			NOT = { has_character_flag = design_toy_cflag }
+			NOT = { has_character_modifier = design_toy_cooldown }
+		}
+		
+		allow = {
+			wealth = 25
+		}
+		
+		effect = {
+			wealth = -25
+			custom_tooltip = { text = design_toy_decision_TT }
+			character_event = { id = MECH.100 }
+			set_character_flag = design_toy_cflag
+			add_character_modifier = {
+				name = design_toy_cooldown
+				hidden = yes
+				years = 1
+			}
+		}
+	}
+	
+	invite_mechanic = {
+		ai_check_interval = 360
+		
+		potential = {
+			society_member_of = tech_society
+			NOT = { has_character_modifier = recently_invited_mechanic }
+			society_rank = 3
+		}
+		
+		allow = {
+			society_currency = 300
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = invite_a_mechanic
+				create_random_priest  = {
+					random_traits = yes
+					dynasty = random
+				}
+			}
+			invite_mechanic_tech_society = yes
+			character_event = { id = MECH.20 }
+			add_character_modifier = {
+				name = recently_invited_mechanic
+				years = 2
+				hidden = yes
+			}
+			change_society_currency = -300
+		}
+	}
+	
+	build_factory = {
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			has_quest = quest_build_factory
+			NOT = { has_character_flag = build_factory_cflag }
+		}
+		
+		allow = {
+			wealth = 250
+			society_currency = 250
+		}
+		
+		effect = {
+			character_event = { id = MECH.110 }
+			set_character_flag = build_factory_cflag
+		}
+	}
+	
+	go_on_walk_for_inspiration = {
+		is_high_prio = yes
+		ai_check_interval = 60
+		
+		potential = {
+			has_quest = quest_inspiration
+			NOT = { has_character_flag = on_inspiration_walk_cflag }
+		}
+		
+		allow = {
+			in_command = no
+			is_abroad = no
+			in_seclusion = no
+		}
+		
+		effect = {
+			set_character_flag = on_inspiration_walk_cflag
+			character_event = { id = MECH.120 }
+		}
+	}
+}
+
+targetted_decisions = {
+	
+	recruit_to_tech_society = {
+		ai_check_interval = 120
+		filter = home_court
+		
+		from_potential = {
+			society_rank = 2
+			society_member_of = tech_society
+			NOT = { has_character_modifier = recently_recruited_to_tech_society }
+		}
+		
+		potential = {
+			can_join_society = tech_society
+			is_in_society = no
+		}
+		
+		allow = {
+			FROM = {
+				show_scope_change = no
+				society_currency = 50
+			}
+		}
+		
+		effect = {
+			FROM = {
+				show_scope_change = no
+				change_society_currency = -50
+				add_character_modifier = {
+					name = recently_recruited_to_tech_society
+					hidden = yes
+					months = 18
+				}
+			}
+			ROOT = {
+				character_event = { id = MECH.1 }
+				FROM = {
+					character_event = { id = MECH.4 days = 5 }
+				}
+			}
+		}
+	}
+	
+	pursue_mastery = {
+		is_high_prio = yes
+		ai_check_interval = 120
+		filter = self
+		
+		potential = {
+			society_member_of = tech_society
+			society_rank = 4
+			NOR = {
+				has_trait = mechanic
+				has_trait = engineer
+				has_trait = designer
+				has_character_flag = tech_society_mastery_cflag
+			}
+		}
+		
+		allow = {
+			OR = {
+				society_currency = 500
+				AND = {
+					custom_tooltip = {
+						text = tt_has_quest_mastery
+						has_quest = quest_pursue_mastery
+					}
+					society_currency = 300
+				}
+			}
+		}
+		
+		effect = {
+			character_event = { id = MECH.10 }
+			if = {
+				limit = { has_quest = quest_pursue_mastery }
+				change_society_currency = -300
+			}
+			else = {
+				change_society_currency = -500
+			}
+			add_character_modifier = {
+				name = pursue_mastery_tech_society
+				years = 3
+			}
+			set_character_flag = tech_society_mastery_cflag
+		}
+	}
+}		

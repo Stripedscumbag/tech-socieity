@@ -1,0 +1,97 @@
+hospital = {
+	
+	streamlined_production_1 = {
+		desc = streamlined_production_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				FROM = {
+					society_member_of = tech_society
+					society_rank = 2
+				}
+				ROOT = {
+					has_building = streamlined_production_1
+				}
+			}
+		}
+		trigger = {
+			FROM  = {	
+				show_scope_change = no
+				society_member_of = tech_society
+			}
+		}
+		prerequisites = { industrial_complex_1 }
+		
+		factory_simple_manufacturing = 1 #modifier definition, for use will just scope to check if has building
+		
+		gold_cost = 350
+		build_time = 780
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	streamlined_production_2 = {
+		desc = streamlined_production_2_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				FROM = {
+					society_member_of = tech_society
+					society_rank = 3
+				}
+				ROOT = {
+					has_building = streamlined_production_1
+				}
+			}
+		}
+		trigger = {
+			FROM  = {	
+				show_scope_change = no
+				society_member_of = tech_society
+			}
+		}
+		prerequisites = { industrial_complex_2 }
+		upgrades_from = streamlined_production_1
+		
+		factory_intermediate_manufacturing = 1 #modifier definition, for use will just scope to check if has building
+		
+		gold_cost = 500
+		build_time = 1105
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	streamlined_production_3 = {
+		desc = streamlined_production_3_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				FROM = {
+					society_member_of = tech_society
+					society_rank = 4
+				}
+				ROOT = {
+					has_building = streamlined_production_1
+				}
+			}
+		}
+		trigger = {
+			FROM  = {	
+				show_scope_change = no
+				society_member_of = tech_society
+			}
+		}
+		prerequisites = { industrial_complex_3 }
+		upgrades_from = streamlined_production_1
+		
+		factory_advanced_manufacturing = 1 #modifier definition, for use will just scope to check if has building
+		
+		gold_cost = 700
+		build_time = 1340
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 10.0
+	}
+}

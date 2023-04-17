@@ -1,0 +1,210 @@
+tech_society;The Mechanists Guild;;;;;;;;;;;;;x
+tech_society_desc;The world drives around innovation and technology. By inventing new things we can reach new heights and accomplish a lot of things.;;;;;;;;;;;;;x
+tech_society_rank_1_female;Apprentice;;;;;;;;;;;;;x
+tech_society_rank_2_female;Engineer;;;;;;;;;;;;;x
+tech_society_rank_3_female;Mechanic;;;;;;;;;;;;;x
+tech_society_rank_4_female;Master Mechanic;;;;;;;;;;;;;x
+tech_society_rank_1_male;Apprentice;;;;;;;;;;;;;x
+tech_society_rank_2_male;Engineer;;;;;;;;;;;;;x
+tech_society_rank_3_male;Mechanic;;;;;;;;;;;;;x
+tech_society_rank_4_male;Master Mechanic;;;;;;;;;;;;;x
+currency_name_tech_society;Innovativeness;;;;;;;;;;;;;x
+tech_society_leader_desc;Head Mechanic;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+DESC_tech_society_welcome_letter;You are welcomed to the Mechanists Guild! Enjoy your time in our wonderful society!;;;;;;;;;;;;;x
+tech_society_welcome_letter_option;I'm in!;;;;;;;;;;;;;x
+TITLE_MECH_100;Toy Blueprint;;;;;;;;;;;;;x
+DESC_MECH_100;In order to actually make a toy I will first have to go over some designs and see which will look the best.;;;;;;;;;;;;;x
+OPTA_MECH100;I can't decide!;;;;;;;;;;;;;x
+OPTB_MECH100;Yeah that's fine.;;;;;;;;;;;;;x
+OPTC_MECH100;I'll work hard!;;;;;;;;;;;;;x
+TITLE_MECH_101;Shaping the toy.;;;;;;;;;;;;;x
+DESC_MECH_101;Now that I've made the blueprint for my toy I can start work on the main body.;;;;;;;;;;;;;x
+OPTA_MECH101;Just wood, yes?;;;;;;;;;;;;;x
+OPTB_MECH101;I'll mix in some better materials.;;;;;;;;;;;;;x
+OPTC_MECH101;Pay the best artisan in town!;;;;;;;;;;;;;x
+OPTD_MECH101;I'll do it myself!;;;;;;;;;;;;;x
+TITLE_MECH_102;Decoration is needed.;;;;;;;;;;;;;x
+DESC_MECH_102;I can't simply leave this slab of wood as is. I'll have to put some decorations on it and paint it a nice colour.;;;;;;;;;;;;;x
+OPTA_MECH102;Well I don't have to…;;;;;;;;;;;;;x
+OPTB_MECH102;There are no mistakes, just happy little accidents.;;;;;;;;;;;;;x
+OPTC_MECH102;I'll stay up all night working on this!;;;;;;;;;;;;;x
+TITLE_MECH_103;The product is done.;;;;;;;;;;;;;x
+DESC_MECH_103;After months of slowly putting it together, the toy I was requested to make is now finally done.;;;;;;;;;;;;;x
+OPTA_MECH103;It's not that bad, right?;;;;;;;;;;;;;x
+OPTA_MECH103;Atleast it's not bad.;;;;;;;;;;;;;x
+OPTA_MECH103;I expected nothing less of myself.;;;;;;;;;;;;;x
+quest_design_toy_succes_desc;You succesfully completed the Design Toy mission.;;;;;;;;;;;;;x
+quest_design_toy_succes_option;Hurray!;;;;;;;;;;;;;x
+quest_design_toy_fail_desc;You lack discipline and didn't manage to succesfully complete the Design Toy mission.;;;;;;;;;;;;;x
+quest_design_toy_fail_option;Bummer.;;;;;;;;;;;;;x
+pursue_mastery_tech_society;Pursueing Mastery;;;;;;;;;;;;;x
+creative;Creative;;;;;;;;;;;;;x
+streamlined_production_1;Conveyor Belts;;;;;;;;;;;;;x
+streamlined_production_desc;By having streamlined production we will be able to produce larger quantites of our products.;;;;;;;;;;;;;x
+factory_simple_manufacturing;§YWill be able to do §GSimple Manufacturing§Y!§!;;;;;;;;;;;;;x
+recruit_to_tech_society;Recruit to The Mechanists Guild;;;;;;;;;;;;;x
+recruit_to_tech_society_power_desc;Ability to recruit new members in to §YThe Mechanists Guild§!.;;;;;;;;;;;;;x
+basic_artifact_building;Simple Artifact Assembly;;;;;;;;;;;;;x
+basic_artifact_building_power_desc;Grants access to new buildings on factories which will aid you with building §GNew Artifacts§!.;;;;;;;;;;;;;x
+invite_mechanic;Invite Mechanic;;;;;;;;;;;;;x
+invite_mechanic_power_desc;Can invite a fellow §YMechanic§! from the §YGuild§! into your court.;;;;;;;;;;;;;x
+intermediate_artifact_building;Intermediate Artifact Assembly;;;;;;;;;;;;;x
+intermediate_artifact_building_power_desc;Grants access to new buildings on factories that will help produce §GBetter Artifacts§!.;;;;;;;;;;;;;x
+advanced_artifact_building;Advanced Artifact Assembly;;;;;;;;;;;;;x
+advanced_artifact_building_power_desc;Grants access to high-tech factory buildings which will allow you to produce §GHigh-quality Artifacts§!.;;;;;;;;;;;;;x
+pursue_matery;Pursue Mastery;;;;;;;;;;;;;x
+pursue_matery_power_desc;Enables §Gright-clicking§! yourself to pursue mastery in a §YMechanics§!, §YEngineering§! or §YDesigning§!.;;;;;;;;;;;;;x
+design_toy;Design Toy;;;;;;;;;;;;;x
+design_toy_power_desc;Design a toy for your child, maybe if its made with high level artisanry the society will reward you for your hard work!;;;;;;;;;;;;;x
+factory_intermediate_manufacturing;§YWill be able to do §GIntermediate Manufacturing§Y!§!;;;;;;;;;;;;;x
+factory_advanced_manufacturing;§YWill be able to do §GAdvanced Manufacturing§Y!§!;;;;;;;;;;;;;x
+opinion_toy_bad;Bad Gift;;;;;;;;;;;;;x
+opinion_toy_mid;Decent Gift;;;;;;;;;;;;;x
+opinion_toy_good;Great Gift;;;;;;;;;;;;;x
+inspired_by_walk;Inspired;;;;;;;;;;;;;x
+bought_art;Bought Art;;;;;;;;;;;;;x
+toy_quality_bad_improvement_TT;§RBad Improvement§!;;;;;;;;;;;;;x
+toy_quality_mid_improvement_TT;§YDecent Improvement§!;;;;;;;;;;;;;x
+toy_quality_good_improvement_TT;§GGood Improvement§!;;;;;;;;;;;;;x
+toy_quality_no_improvement_TT;§RNo Improvement§!;;;;;;;;;;;;;x
+quest_build_factory_TT;§GHigh chance of succes§!;;;;;;;;;;;;;x
+quest_build_factory_TT_5050;§RLow chance of succes§!;;;;;;;;;;;;;x
+inspirational_quest_tt_1;§GGo to the courtyard§!;;;;;;;;;;;;;x
+inspirational_quest_tt_2;§GGo to town§!;;;;;;;;;;;;;x
+inspirational_quest_tt_3;§GTalk to the Gardener§!;;;;;;;;;;;;;x
+inspirational_quest_tt_4;§GTalk to a random courtier§!;;;;;;;;;;;;;x
+inspirational_quest_tt_5;§GLearn about flowers§!;;;;;;;;;;;;;x
+inspirational_quest_tt_6;§GTake a flower§!;;;;;;;;;;;;;x
+inspirational_quest_tt_7;§GGet back to work§!;;;;;;;;;;;;;x
+inspirational_quest_tt_8;§GGet back to work§!;;;;;;;;;;;;;x
+inspirational_quest_tt_9;§GDebate§!;;;;;;;;;;;;;x
+inspirational_quest_tt_10;§GListen to their story§!;;;;;;;;;;;;;x
+inspirational_quest_tt_11;§GEnlightened§!;;;;;;;;;;;;;x
+inspirational_quest_tt_12;§GReflect on your sins§!;;;;;;;;;;;;;x
+inspirational_quest_tt_13;§GTalk to the Shopkeeper§!;;;;;;;;;;;;;x
+inspirational_quest_tt_14;§GGet out of town§!;;;;;;;;;;;;;x
+inspirational_quest_tt_15;§GBuy Art§!;;;;;;;;;;;;;x
+inspirational_quest_tt_16;§GDiscuss Art§!;;;;;;;;;;;;;x
+inspirational_quest_tt_17;§GListen to the story§!;;;;;;;;;;;;;x
+inspirational_quest_tt_18;§GMove on§!;;;;;;;;;;;;;x
+inspirational_quest_tt_19;§GWalk to farm§!;;;;;;;;;;;;;x
+inspirational_quest_tt_20;§GWalk to forest§!;;;;;;;;;;;;;x
+inspirational_quest_tt_21;§GDrink Tea§!;;;;;;;;;;;;;x
+inspirational_quest_tt_22;§GTalked with Spirit§!;;;;;;;;;;;;;x
+build_factory_tt;§YNote:§M You'll get a decision that makes building a factory cheaper.§!;;;;;;;;;;;;;x
+chose_mechanic_mastery;§GMaster Mechanery§!;;;;;;;;;;;;;x
+chose_engineer_mastery;§GMaster Engineering§!;;;;;;;;;;;;;x
+chose_designer_mastery;§GMaster Designing§!;;;;;;;;;;;;;x
+TITLE_MECH_10;Pursue your Mastery;;;;;;;;;;;;;x
+DESC_MECH_10;In order to reach higher limits I must specialise in a form craft. Many things within the Mechanists Guild require either to be a Mechanic, Engineer or Designer so it would be a good choice to make that my specialisation.;;;;;;;;;;;;;x
+OPTA_MECH10;A Mechanic for sure.;;;;;;;;;;;;;x
+OPTB_MECH10;Engineering is a good skill.;;;;;;;;;;;;;x
+OPTC_MECH10;What can I do without a plan?;;;;;;;;;;;;;x
+TITLE_MECH_11;Mastery being pursued;;;;;;;;;;;;;x
+DESC_MECH_11;My first task that I got from my mentor was to make some prototypes of a little robot. He wanted me to utilise my skills in order to make a little singing monkey.;;;;;;;;;;;;;x
+OPTA_MECH11;I will take my time for this.;;;;;;;;;;;;;x
+OPTB_MECH11;WHY WON'T IT JUST WORK!?;;;;;;;;;;;;;x
+TITLE_MECH_12;Investment needed;;;;;;;;;;;;;x
+DESC_MECH_12;For my training my mentor has sent me out to collect some parts to build the little monkey, however it would cost me alot to import these specific parts from across the country.;;;;;;;;;;;;;x
+OPTA_MECH12;My reward for doing so shall be great.;;;;;;;;;;;;;x
+OPTB_MECH12;Should I bother?;;;;;;;;;;;;;x
+TITLE_MECH_13;Mastering my craft.;;;;;;;;;;;;;x
+DESC_MECH_13;Now that I've finished the robot monkey, mentor has instructed me to do something all on my own with no prior inspiration or task. I am really being put up to the task now.;;;;;;;;;;;;;x
+OPTA_MECH13;I'll be creative.;;;;;;;;;;;;;x
+OPTB_MECH13;I'll just work on some machinery.;;;;;;;;;;;;;x
+OPTC_MECH13;There's no urgency to do anything…;;;;;;;;;;;;;x
+TITLE_MECH_14;A Master;;;;;;;;;;;;;x
+DESC_MECH_14A;After some grueling months of hard excercises and tasks, mentor has commended me and told me that I am now a true Mechanic in his eyes. I'll be able to do my own work and make my own decisions on what I can make.;;;;;;;;;;;;;x
+DESC_MECH_14B;My mentor has told me after some months that I have earned his approval and that I am now a Engineer just like him. He commended me on my work ethic and how I smart I am.;;;;;;;;;;;;;x
+DESC_MECH_14C;My mentor came up to me last night telling me that he loved all the plans I had drawn up. He told me that I am a true Designer ready to make great projects.;;;;;;;;;;;;;x
+OPTA_MECH14;A Mechanic I am!;;;;;;;;;;;;;x
+OPTB_MECH14;3 Hurrays for the Engineer!;;;;;;;;;;;;;x
+OPTC_MECH14;I'll draw up a nice celebration cake!;;;;;;;;;;;;;x
+TITLE_MECH_20;Invited Mechanic;;;;;;;;;;;;;x
+DESC_MECH_20;A fellow Machinist from the Guild has shown up at my court ready to service my country. Although I requested his presence perhaps I don't need someone as I am a great Mechanist myself...;;;;;;;;;;;;;x
+OPTA_MECH20;Welcome!;;;;;;;;;;;;;x
+OPTB_MECH20;I have no need for him.;;;;;;;;;;;;;x
+TITLE_MECH_111;Factory Constructed;;;;;;;;;;;;;x
+DESC_MECH_111;With the help of Mechanists I have been able to quickly put up a factory where I can start work on project within my country.;;;;;;;;;;;;;x
+OPTA_MECH111;Lovely!;;;;;;;;;;;;;x
+TITLE_MECH_112;Failure to build Factory;;;;;;;;;;;;;x
+DESC_MECH_112;Due to my ineptitude the factory construction has fallen completely flat and the workers who I invited to build have all gone home. The society will surely scorn me for my failure.;;;;;;;;;;;;;x
+OPTA_MECH112;Nobody's perfect…;;;;;;;;;;;;;x
+TITLE_MECH_120;Walk for inspiration;;;;;;;;;;;;;x
+DESC_MECH_120;On order of the society I have been tasked to go out a nice walk to get myself some new inspiration. It will help me make even better designs that have already been perfected by others. ;;;;;;;;;;;;;x
+OPTA_MECH120;I'll walk around the castle.;;;;;;;;;;;;;x
+OPTB_MECH120;I'll talk with some of the townspeople.;;;;;;;;;;;;;x
+TITLE_MECH_121;The Courtyard;;;;;;;;;;;;;x
+DESC_MECH_121;While talking a stroll within the courtyard I came across lots of people. It's just that I dont feel any wiser, are there any interesting people within my court that could help me with my mission? ;;;;;;;;;;;;;x
+OPTA_MECH121;The gardener should a smart man to talk to.;;;;;;;;;;;;;x
+OPTB_MECH121;Hey, you! Yes, you!;;;;;;;;;;;;;
+TITLE_MECH_122;A talk about flowers;;;;;;;;;;;;;x
+DESC_MECH_122;When I asked the gardener of the castle tell me about the gardens he told he organises all of it. He has lots of little patches and even grows his own cabbages behind the castle in the gardens. He's holding a flower up telling all about it's characteristics.;;;;;;;;;;;;;x
+OPTA_MECH122;Wow that's interesting to hear.;;;;;;;;;;;;;x
+OPTB_MECH122;It smells lovely!;;;;;;;;;;;;;x
+TITLE_MECH_123;A story about a flower.;;;;;;;;;;;;;x
+DESC_MECH_123;In a medieval castle, there was a beautiful flower with rich purple petals and a sweet fragrance. It grew in a small courtyard behind the castle walls, watched over by the castle's inhabitants. Despite their care, the flower began to wither and fade. But one day, with a bit of extra love, it bloomed again, bringing joy and beauty to the castle once more.';;;;;;;;;;;;;x
+OPTA_MECH123;I feel inspired by your story, thank you.;;;;;;;;;;;;;x
+TITLE_MECH_124;A dazzling flower.;;;;;;;;;;;;;x
+DESC_MECH_124;The flower that the garderner gave me is so beautiful. I put in my throne room and every time a [GetManWomanOpp] walks in they would be struck by a daze of true beauty. My [GetHusbandWife] seems to have taken a better liking to me.;;;;;;;;;;;;;x
+OPTA_MECH124;Flowers are magical.;;;;;;;;;;;;;x
+TITLE_MECH_125;The startled courtier;;;;;;;;;;;;;x
+DESC_MECH_125;As I shouted towards the man he would slightly jump out of shock. I walked over to him asked him some questions. He seemed without spirit so when I told him he should just drink some wine he said that he can't because he swore it off. I responded by telling him that's mad.;;;;;;;;;;;;;x
+OPTA_MECH125;I shouldn't tell others what to do…;;;;;;;;;;;;;x
+OPTB_MECH125;Why are you so sad?;;;;;;;;;;;;;x
+TITLE_MECH_126;A debate.;;;;;;;;;;;;;x
+DESC_MECH_126;As I backed down he would tell me that he swore off because he lost his son to alcohol and that he still griefs every day. Every day he walks up to the place where he lost his son, the dine room. Apparantly he was engaged to a daughter of a baron, however I'd never heard of them.;;;;;;;;;;;;;x
+OPTA_MECH126;Emotions are very beautiful.;;;;;;;;;;;;;x
+TITLE_MECH_127;A sad story.;;;;;;;;;;;;;x
+DESC_MECH_127;He told me that he lost his son in an accident a few years back and now he has nothing left. His wife died long ago and now he's left with nothing. He hurts over the fact that he has no one left in his life.;;;;;;;;;;;;;x
+OPTA_MECH127;Poor soul…;;;;;;;;;;;;;x
+TITLE_MECH_128;In between the hustle and bustle;;;;;;;;;;;;;x
+DESC_MECH_128;I have decided to go out into town to look for inspirations, surely the people living around me have some things that I have never seen before.;;;;;;;;;;;;;x
+OPTA_MECH128;That shop has some pieces of art!;;;;;;;;;;;;;x
+OPTB_MECH128;Maybe I'll go even further for more inspiration!;;;;;;;;;;;;;x
+TITLE_MECH_129;A shopkeeper;;;;;;;;;;;;;x
+DESC_MECH_129;As I walk up to this little the shop, the owner comes from the back. I asked how he knew I was infront of his store and he said that it was his intuition. Adding onto it by saying that it would be bad if it was a thief. ;;;;;;;;;;;;;x
+OPTA_MECH129;I'm no thief! I'm a customer!;;;;;;;;;;;;;x
+OPTB_MECH129;So uhh.. What's this piece?;;;;;;;;;;;;;x
+TITLE_MECH_130;Little souvenir;;;;;;;;;;;;;x
+DESC_MECH_130;Seeing my fancy clothes the shopkeeper gave a me a smirk and pronounced an outragious price, however to keep myself from the shame that he inquired that I might've been a thief I asked to buy the piece. He tells me he got inspiration from seeing all the people walk by his shop every day.;;;;;;;;;;;;;x
+OPTA_MECH130;That's a lame story.;;;;;;;;;;;;;x
+TITLE_MECH_131;Art Discussion;;;;;;;;;;;;;x
+DESC_MECH_131;After asking about this piece he told me about the squares and how each one represents a different emotion. To me it's just squares, however he insists that there's a very deep meaning which the common mind wouldn't be able to comprehend and that that's why it is expensive.;;;;;;;;;;;;;x
+OPTA_MECH131;Abstract art was and never will be good.;;;;;;;;;;;;;x
+TITLE_MECH_132;The outside of town;;;;;;;;;;;;;x
+DESC_MECH_132;When I walked pasted the main gate of the castle town I expierenced something I rarely do. The outside. I'm always stuck within the lazy and depressing walls of my castle. Further along the road I see it split up, which way should I go?;;;;;;;;;;;;;x
+OPTA_MECH132;I'll walk up to that farm.;;;;;;;;;;;;;x
+OPTB_MECH132;I don't need anymore human interaction for today.;;;;;;;;;;;;;x
+TITLE_MECH_133;A farm on the countryside.;;;;;;;;;;;;;x
+DESC_MECH_133;As I walked up to the farmer who was carrying some food for his cattle I asked him about his daily life. He told me it was always the same and that the winters were boring. However he told me about things that I had never expierenced before and that I would love to hear about.;;;;;;;;;;;;;x
+OPTA_MECH133;Do you have some tea?;;;;;;;;;;;;;x
+TITLE_MECH_134;Misty Forest;;;;;;;;;;;;;x
+DESC_MECH_134;After a while of walking through the forest I felt rested and healthy. On my way back I felt I was being watched, but when I turned back I saw nothing. After taking a small break from walking the thing that had been watching me was a playsome spirit trying to tease me. I rarely encounter spirits so I made a break for it and ran.;;;;;;;;;;;;;x
+OPTA_MECH134;They exist?;;;;;;;;;;;;;x
+TITLE_MECH_135;Home sweet, home.;;;;;;;;;;;;;x
+DESC_MECH_135;No where else is the best, as my own castle. The outside world is very fascinating.;;;;;;;;;;;;;x
+OPTA_MECH135;I feel motivated!;;;;;;;;;;;;;x
+desc_quest_design_toy;The Head Mechanic has requested you to build a toy to test your skills as a craftsman.;;;;;;;;;;;;;x
+desc_quest_recruit_to_tech_society;The Head Mechanic has giving you the mission to recruit a new member to Guild.;;;;;;;;;;;;;x
+desc_quest_build_factory;The Head Mechanic has given the mission to build a factory. With the help of the Guild you will be able to do it for cheaper as you will need to factory to manufacture parts for new projects.;;;;;;;;;;;;;x
+desc_quest_pursue;As one of the Master Mechanics within the Guild you must master a form of craftsmanship.;;;;;;;;;;;;;x
+desc_quest_inspiration;You have been tasked with going on out to take inspiration from other places.;;;;;;;;;;;;;x
+quest_design_toy_succes_desc;You have succesfully completed the Design Toy quest, good job!;;;;;;;;;;;;;x
+quest_design_toy_fail_desc;You have failed to design a toy.;;;;;;;;;;;;;x
+succes_factory_quest_desc;You have succesfully built a factory within your realm and can now start producing parts for your projects!;;;;;;;;;;;;;x
+failed_factory_quest_desc;You failed to built a factory and no longer have right to build a cheap factory untill you get another mission.;;;;;;;;;;;;;x
+quest_build_factory_succes_option;Great!;;;;;;;;;;;;;x
+quest_build_factory_fail_option;Oh the spirits...;;;;;;;;;;;;;x
+quest_design_toy_succes_option;My kid loved it too!;;;;;;;;;;;;;x
+quest_design_toy_fail_option;My kid didn't like it either…;;;;;;;;;;;;;x
+quest_pursue_mastery_option;I'm a master of my craft.;;;;;;;;;;;;;x
+quest_inspiration_option;I'm an inspired [GetManWoman]!;;;;;;;;;;;;;x
+TITLE_MECH_110;Start Construction;;;;;;;;;;;;;x
+DESC_MECH_110;The society has request me to put in some funds of my own in order to build the factory. Without it they won't be able to build it.;;;;;;;;;;;;;x
+OPTA_MECH110;My money is what they need!;;;;;;;;;;;;;x
+OPTB_MECH110;I'll use my standing in the society to leverage a bit of the pay.;;;;;;;;;;;;;x
+OPTC_MECH110;They don't need everything…;;;;;;;;;;;;;x
+quest_inspiration_succes_desc;You have taken a walk and learned about all the things people had to say.;;;;;;;;;;;;;x
