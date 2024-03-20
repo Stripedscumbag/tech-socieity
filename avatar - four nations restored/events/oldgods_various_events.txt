@@ -24,8 +24,8 @@ character_event = {
 	trigger = {
 		has_dlc = "The Old Gods"
 		OR = {
-			religion = earth_spirituality
-			religion = fire_spirituality
+			religion = piracy
+			religion = barbarism
 		}
 		is_alive = yes
 		NOT = { trait = berserker }
@@ -377,8 +377,10 @@ character_event = {
 		in_command = no
 		OR = {
 			religion = earth_spirituality
+			religion = earth_spirituality_reformed
 			religion = southern_spirituality
 			religion = fire_spirituality
+			religion = fire_spirituality_reformed
 			religion = air_spirituality
 		}
 		NOT = {
@@ -419,20 +421,29 @@ character_event = {
 			}
 			if = {
 				limit = {
-					religion = earth_spirituality
+					OR = {
+						religion = earth_spirituality
+						religion = earth_spirituality_reformed
+					}
 				}
 				add_trait = earthbender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
 					religion = southern_spirituality
 				}
 				add_trait = waterbender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
-					religion = fire_spirituality
+					OR = {
+						religion = fire_spirituality
+						religion = fire_spirituality_reformed
+					}
 				}
 				add_trait = firebender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
 					religion = air_spirituality
 				}
@@ -464,8 +475,10 @@ character_event = {
 		in_command = no
 		OR = {
 			religion = earth_spirituality
+			religion = earth_spirituality_reformed
 			religion = southern_spirituality
 			religion = fire_spirituality
+			religion = fire_spirituality_reformed
 			religion = air_spirituality
 		}
 		NOT = {
@@ -490,7 +503,8 @@ character_event = {
 			culture = ROOT
 			trait = mystic
 			trait = scholarly_theologian
-			trait = fair		}
+			trait = fair		
+		}
 		new_character = {
 			give_minor_title = title_seneschal
 			random_list = {
@@ -506,20 +520,29 @@ character_event = {
 			}
 			if = {
 				limit = {
-					religion = earth_spirituality
+					OR = {
+						religion = earth_spirituality
+						religion = earth_spirituality_reformed
+					}
 				}
 				add_trait = earthbender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
 					religion = southern_spirituality
 				}
 				add_trait = waterbender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
-					religion = fire_spirituality
+					OR = {
+						religion = fire_spirituality
+						religion = fire_spirituality_reformed
+					}
 				}
 				add_trait = firebender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
 					religion = air_spirituality
 				}
@@ -551,8 +574,10 @@ character_event = {
 		in_command = no
 		OR = {
 			religion = earth_spirituality
+			religion = earth_spirituality_reformed
 			religion = southern_spirituality
 			religion = fire_spirituality
+			religion = fire_spirituality_reformed
 			religion = air_spirituality
 		}
 		NOT = {
@@ -591,20 +616,29 @@ character_event = {
 			}
 			if = {
 				limit = {
-					religion = earth_spirituality
+					OR = {
+						religion = earth_spirituality
+						religion = earth_spirituality_reformed
+					}
 				}
 				add_trait = earthbender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
 					religion = southern_spirituality
 				}
 				add_trait = waterbender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
-					religion = fire_spirituality
+					OR = {
+						religion = fire_spirituality
+						religion = fire_spirituality_reformed
+					}
 				}
 				add_trait = firebender
-			} else_if = {
+			} 
+			else_if = {
 				limit = {
 					religion = air_spirituality
 				}

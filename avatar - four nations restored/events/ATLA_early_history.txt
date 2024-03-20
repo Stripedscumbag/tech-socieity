@@ -23,7 +23,10 @@ narrative_event = { # Formation of the Kyoshi Warriors
 	option = { # Follower
 		name = EVTOPTTLAA.4000
 		trigger = {
-			religion = followers_of_kyoshi
+			OR = {
+				religion = followers_of_kyoshi
+				religion = followers_of_kyoshi_reformed
+			}
 			NOT = { has_character_flag = is_kyoshi }
 		}
 	}
@@ -31,7 +34,10 @@ narrative_event = { # Formation of the Kyoshi Warriors
 	option = { # Way
 		name = EVTOPTTLAB.4000
 		trigger = {
-			religion = way_of_chin
+			OR = {
+				religion = way_of_chin
+				religion = way_of_chin_reformed
+			}
 			NOT = { has_character_flag = is_kyoshi }
 		}
 	}
@@ -39,9 +45,13 @@ narrative_event = { # Formation of the Kyoshi Warriors
 	option = { # World
 		name = EVTOPTTLAC.4000
 		trigger = {
-			NOT = { religion = followers_of_kyoshi }
-			NOT = { religion = way_of_chin }
-			NOT = { has_character_flag = is_kyoshi }
+			NOR = { 
+				religion = followers_of_kyoshi 
+				religion = followers_of_kyoshi_reformed
+				religion = way_of_chin 
+				religion = way_of_chin_reformed
+				has_character_flag = is_kyoshi 
+			}
 		}
 	}
 
@@ -271,7 +281,9 @@ narrative_event = { # Reunification - World
 			culture_group = earth_kingdom_culture
 			NOR = {
 				religion = way_of_chin
+				religion = way_of_chin_reformed
 				religion = children_of_si_wong
+				religion = children_of_si_wong_reformed
 				religion = piracy
 			}
 		}
@@ -305,12 +317,14 @@ narrative_event = { # Reunification - World
 					religion = omashuan_ethics
 					religion = the_divided
 					religion = fortune_telling
+					religion = fortune_telling_reformed
 				}
 			}
 			modifier = {
 				factor = 2.5
 				OR = {
 					religion = followers_of_kyoshi
+					religion = followers_of_kyoshi_reformed
 					culture = southern_earth
 					culture = earth_islander
 				}
@@ -518,7 +532,12 @@ character_event = { # Age Update
 				NOT = { has_global_flag = fall_of_chin_remnant }
 			}
 			random_independent_ruler = {
-				limit = { religion = way_of_chin }
+				limit = { 
+					OR = {
+						religion = way_of_chin
+						religion = way_of_chin_reformed
+					}
+				}
 				character_event = { id = ATLAE.4008 }
 			}
 		}
@@ -542,7 +561,12 @@ character_event = { # Age Update
 				NOT = { has_global_flag = age_of_rebellion_in_chin }
 			}
 			any_independent_ruler = {
-				limit = { religion = way_of_chin }
+				limit = { 
+					OR = {
+						religion = way_of_chin
+						religion = way_of_chin_reformed
+					}
+				}
 				character_event = { id = ATLAE.4021 }
 			}
 			set_global_flag = age_of_rebellion_in_chin
@@ -554,7 +578,12 @@ character_event = { # Age Update
 				NOT = { has_global_flag = age_of_rebellion_in_fortune }
 			}
 			any_independent_ruler = {
-				limit = { religion = fortune_telling }
+				limit = {
+					OR = {
+						religion = fortune_telling 
+						religion = fortune_telling_reformed
+					}
+				}
 				character_event = { id = ATLAE.4022 }
 			}
 			set_global_flag = age_of_rebellion_in_fortune
@@ -614,7 +643,12 @@ character_event = { # The Fall of Chin - Call Meeting
 		name = EVTOPTTLA.4008
 		hidden_tooltip = {
 			any_independent_ruler = {
-				limit = { religion = way_of_chin }
+				limit = { 
+					OR = {
+						religion = way_of_chin
+						religion = way_of_chin_reformed
+					}
+				}
 				character_event = { id = ATLAE.4009 }
 			}
 			e_earth_kingdom = {
@@ -657,8 +691,11 @@ character_event = { # The Fall of Chin - Chance for Earth King
 		name = EVTOPTTLA.4010
 		hidden_tooltip = {
 			any_independent_ruler = {
-				limit = {
-					religion = way_of_chin
+				limit = { 
+					OR = {
+						religion = way_of_chin
+						religion = way_of_chin_reformed
+					}
 					has_character_flag = fallen_for_trap
 				}
 				character_event = { id = ATLAE.4012 days = 16 } # Eliminate
@@ -740,16 +777,22 @@ narrative_event = { # The Fall of Chin - Realm Shatter
 			}
 		}
 		trigger = {
-			religion = way_of_chin
+			OR = {
+				religion = way_of_chin
+				religion = way_of_chin_reformed
+			}
 		}
 	}
 
 	option = { # Earth Kingdom
 		name = EVTOPTTLAD.4013
 		trigger = {
-			NOT = { religion = way_of_chin }
-			NOT = { has_landed_title = e_earth_kingdom }
-			NOT = { has_character_flag = is_kyoshi }
+			NOR = { 
+				religion = way_of_chin 
+				religion = way_of_chin_reformed
+				has_landed_title = e_earth_kingdom 
+				has_character_flag = is_kyoshi 
+			}
 			culture_group = earth_kingdom_culture
 		}
 	}
@@ -757,10 +800,13 @@ narrative_event = { # The Fall of Chin - Realm Shatter
 	option = { # World
 		name = EVTOPTTLAE.4013
 		trigger = {
-			NOT = { religion = way_of_chin }
-			NOT = { has_landed_title = e_earth_kingdom }
-			NOT = { has_character_flag = is_kyoshi }
-			NOT = { culture_group = earth_kingdom_culture }
+			NOR = { 
+				religion = way_of_chin 
+				religion = way_of_chin_reformed
+				has_landed_title = e_earth_kingdom 
+				has_character_flag = is_kyoshi 
+				culture_group = earth_kingdom_culture 
+			}
 		}
 	}
 }
@@ -1008,12 +1054,20 @@ character_event = { # Conversion of Chin Lords
 				any_realm_character = {
 					limit = {
 						ai = no
-						religion = way_of_chin
+						OR = {
+							religion = way_of_chin
+							religion = way_of_chin_reformed
+						}
 					}
 					religion = earth_spirituality
 				}
 				any_realm_province = {
-					limit = { religion = way_of_chin }
+					limit = { 
+						OR = {
+							religion = way_of_chin 
+							religion = way_of_chin_reformed
+						}
+					}
 					remove_province_modifier = age_of_rebellion_malus
 					religion = earth_spirituality
 					add_province_modifier = { name = age_of_rebellion_malus_world duration = -1 }
@@ -1038,7 +1092,12 @@ character_event = { # Conversion of Chin Lords
 					province_event = { id = TOG.1000 }
 				}
 				random_realm_province = {
-					limit = { religion = way_of_chin }
+					limit = { 
+						OR = {
+							religion = way_of_chin 
+							religion = way_of_chin_reformed
+						}
+					}
 					religion = earth_spirituality
 				}
 			}
@@ -1073,12 +1132,20 @@ character_event = { # End of Fortune
 				any_realm_character = {
 					limit = {
 						ai = no
-						religion = fortune_telling
+						OR = {
+							religion = fortune_telling 
+							religion = fortune_telling_reformed
+						}
 					}
 					religion = earth_spirituality
 				}
 				any_realm_province = {
-					limit = { religion = fortune_telling }
+					limit = { 
+						OR = {
+							religion = fortune_telling 
+							religion = fortune_telling_reformed
+						}
+					}
 					remove_province_modifier = age_of_rebellion_malus
 					religion = earth_spirituality
 					add_province_modifier = { name = age_of_rebellion_malus_world duration = -1 }
@@ -1103,7 +1170,12 @@ character_event = { # End of Fortune
 					province_event = { id = TOG.1000 }
 				}
 				random_realm_province = {
-					limit = { religion = fortune_telling }
+					limit = { 
+						OR = {
+							religion = fortune_telling 
+							religion = fortune_telling_reformed
+						}
+					}
 					religion = earth_spirituality
 				}
 			}

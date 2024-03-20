@@ -911,6 +911,7 @@ narrative_event = { # Sozin's Comet Arrives
 	}
 	
 	immediate = {
+		log = "Sozin's Comet event ATLAE.23"
 		set_global_flag = comet_has_come
 	}
 
@@ -1773,7 +1774,9 @@ character_event = { # Fire Spiritulists Rebellion - Firelord
 						limit = {
 							OR = {
 								religion = fire_spirituality
+								religion = fire_spirituality_reformed
 								religion = bhanti_spirituality
+								religion = bhanti_spirituality_reformed
 							}
 						}
 						FROM = {
@@ -2018,7 +2021,9 @@ character_event = { # Fire Spiritulists Rebellion - Sozin Start
 						limit = {
 							OR = {
 								religion = fire_spirituality
+								religion = fire_spirituality_reformed
 								religion = bhanti_spirituality
+								religion = bhanti_spirituality_reformed
 							}
 						}
 						new_character = {

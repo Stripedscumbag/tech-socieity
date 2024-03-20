@@ -838,13 +838,13 @@ can_be_chancellor_trigger = {
 			OR = {
 				AND = { #Patriarchal religions can only hire males. Matriarchal religions can only hire females.
 					is_female = no
-					NOT = { liege = { religion = { has_religion_feature = religion_matriarchal } } }
+					NOT = { liege = { has_religion_feature = religion_matriarchal } } 
 				}
 				AND = {
-					is_female = yes
-					OR = {
-						liege = { religion = { has_religion_feature = religion_matriarchal } }
-						liege = { religion = { has_religion_feature = religion_equal } }
+					is_female = yes 
+					OR = { 
+						liege = { has_religion_feature = religion_matriarchal } 
+						liege = { has_religion_feature = religion_equal } 
 					}
 				}
 				AND = {
@@ -2707,15 +2707,19 @@ have_all_armorsmith_artifacts_all_flags_trigger = {
 have_all_weaponsmith_artifacts_all_flags_trigger = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				religion = children_of_si_wong
+				religion = children_of_si_wong_reformed
 			}
 		}
 		have_all_weaponsmith_swords_all_flags_trigger = yes
 	}
 	trigger_if = {
 		limit = {
-			religion = children_of_si_wong
+			OR = {
+				religion = children_of_si_wong
+				religion = children_of_si_wong_reformed
+			}
 		}
 		have_all_weaponsmith_scimitar_all_flags_trigger = yes
 	}
@@ -3782,17 +3786,24 @@ is_liked_and_disliked_by_Spirits = {
 likes_fire_spirituality = {
 	OR = {
 		religion = fire_spirituality
+		religion = fire_spirituality_reformed
 		religion = bhanti_spirituality
+		religion = bhanti_spirituality_reformed
 		religion = the_eternal_flame
+		religion = the_eternal_flame_reformed
 	}
 }
 likes_earth_spirituality = {
 	OR = {
 		religion = earth_spirituality
+		religion = earth_spirituality_reformed
 		religion = the_great_serpent
 		religion = children_of_si_wong
+		religion = children_of_si_wong_reformed
 		religion = fortune_telling
+		religion = fortune_telling_reformed
 		religion = followers_of_kyoshi
+		religion = followers_of_kyoshi_reformed
 	}
 }
 likes_earth_heritage = {
@@ -3807,6 +3818,7 @@ likes_earth_heritage = {
 likes_air_spirituality = {
 	OR = {
 		religion = air_spirituality
+		religion = air_spirituality_reformed
 		religion = air_acolytism
 		religion = neo-nomadism
 	}
@@ -3825,6 +3837,7 @@ likes_earth_imperialism = {
 	OR = {
 		religion = unificationism
 		religion = way_of_chin
+		religion = way_of_chin_reformed
 		religion = earth_monarchism
 	}
 }

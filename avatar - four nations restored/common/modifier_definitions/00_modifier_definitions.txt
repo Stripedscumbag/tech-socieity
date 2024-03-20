@@ -714,6 +714,14 @@ fire_spirituality_opinion = {
 	max_decimals = 0
 }
 
+fire_spirituality_reformed_opinion = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+}
+
 colonial_water_fire_opinion = {
 	show_as_percent = no
 	is_good = yes
@@ -792,6 +800,7 @@ lustful_opinion = {
 	is_hidden = no
 	max_decimals = 0
 }
+
 
 opinion_of_lustful = {
 	show_as_percent = no
@@ -958,13 +967,7 @@ deceitful_opinion = {
 	max_decimals = 0
 }
 
-kind_opinion = {
-	show_as_percent = no
-	is_good = yes
-	is_monthly = no
-	is_hidden = no
-	max_decimals = 0
-}
+
 
 charitable_opinion = {
 	show_as_percent = no
@@ -1029,13 +1032,7 @@ gardener_opinion = {
 	max_decimals = 0
 }
 
-lunatic_opinion = {
-	show_as_percent = no
-	is_good = yes
-	is_monthly = no
-	is_hidden = no
-	max_decimals = 0
-}
+
 
 arbitrary_opinion = {
 	show_as_percent = no
@@ -1054,6 +1051,14 @@ trusting_opinion = {
 }
 
 way_of_chin_opinion = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+}
+
+way_of_chin_reformed_opinion = {
 	show_as_percent = no
 	is_good = yes
 	is_monthly = no
@@ -1110,6 +1115,28 @@ path_of_jin_wei_opinion = {
 }
 
 path_of_wei_jin_opinion = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+}
+lunatic_opinion = {
+	show_as_percent = no
+	is_good = no
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+}
+kind_opinion = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+}
+
+fire_nation_imperialism_opinion = {
 	show_as_percent = no
 	is_good = yes
 	is_monthly = no

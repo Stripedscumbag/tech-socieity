@@ -228,6 +228,7 @@ crownChin = {
 	active = {
 		OR = {
 			religion = way_of_chin
+			religion = way_of_chin_reformed
 			dynasty = 336
 		}
 		OR = {
@@ -279,7 +280,10 @@ crownSunWarrior = {
 	}
 	quality = 4
 	active = {
-		religion = the_eternal_flame
+		OR = {
+			religion = the_eternal_flame
+			religion = the_eternal_flame_reformed
+		}
 	}
 	allowed_gift = {
 		always = no

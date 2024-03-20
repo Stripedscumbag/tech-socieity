@@ -22,6 +22,7 @@ avatar = {
 	tolerates_water_religions = yes
 	tolerates_modern_religions = yes
 	way_of_chin_opinion = -200
+	way_of_chin_reformed_opinion = -200
 	opposites = {
 		fullyrealisedavatar
 	}
@@ -46,6 +47,7 @@ fullyrealisedavatar = {
 	tolerates_water_religions = yes
 	tolerates_modern_religions = yes
 	way_of_chin_opinion = -200
+	way_of_chin_reformed_opinion = -200
 	opposites = {
 		avatar
 	}
@@ -69,6 +71,7 @@ directdescendantavatar = {
 	opposite_opinion = 10
 	general_opinion = 10
 	way_of_chin_opinion = -200
+	way_of_chin_reformed_opinion = -200
 	opposites = {
 		descendantavatar
 		avatar
@@ -475,6 +478,7 @@ yuyan = {
 		OR = {
 			religion = fire_nation_imperialism
 			religion = fire_spirituality
+			religion = fire_spirituality_reformed
 		}
 	}
 	opposites = {
@@ -745,6 +749,7 @@ master_healer = {
 	}
 	opposites = {
 		bloodbender
+		healer
 	}
 	learning = 8
 	health = 6.0
@@ -926,7 +931,10 @@ levitation = {
 			trait = airbender
 			trait = avatar_airbender
 		}
-		religion = air_spirituality
+		OR = {
+			religion = air_spirituality
+			religion = air_spirituality_reformed
+		}
 	}
 	opposites = {
 		voidbender
@@ -2493,6 +2501,7 @@ DaiLiFactMember = {
 	intrigue = 1
 	general_opinion = 5
 	opposite_opinion = -15
+	#desc = DaiLiFactMember_desc
 }
 
 AdminFactMember = {

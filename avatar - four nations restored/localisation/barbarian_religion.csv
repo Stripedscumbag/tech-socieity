@@ -27,7 +27,7 @@ barbarian_all_counties_religion_flip;The religion of §Y25%§! of the counties you
 can_reform_barbarism;§YBarbarism§! can now be reformed.;;;;;;;;;;;x
 children_inspired_to_be_strong;You inspire your offspring! Your children have a chance to become §YStrong§!, §YBrawny§!, or gain §YMartial§!.;;;;;;;;;;;x
 bending_can_improve;Chance to become a stronger §Ybender§!.;;;;;;;;;;;x
-bending_can_improve;You inspire your offspring! Chance for your children to become stronger §Ybenders§!.;;;;;;;;;;;x
+bending_can_improve_children;You inspire your offspring! Chance for your children to become stronger §Ybenders§!.;;;;;;;;;;;x
 wives_become_lustful;The women of your tribe are impressed! Chance for your wives and concubines to become §YLustful§!!;;;;;;;;;;;x
 husbands_become_lustful;The men of your tribe are impressed! Chance for your husbands and consorts to become §YLustful§!!;;;;;;;;;;;x
 does_not_count_as_execution;§RDoes not count towards the total number of executions needed for reformation.§!;;;;;;;;;;;x

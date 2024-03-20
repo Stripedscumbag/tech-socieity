@@ -98,6 +98,8 @@ lightningbender;Lightningbender;;;;;;;;;;;x
 lightningbender_desc;One of the most advanced firebending techniques. It requires a calm mind to separate the energy and be its vessel.;;;;;;;;;;;x
 healer;Healer;;;;;;;;;;;x
 healer_desc;This character has mastered the waterbender healing techniques and as a result can help mend injuries sustained by themselves and allies.;;;;;;;;;;;x
+master_healer;Master Healer;;;;;;;;;;;x
+master_healer_desc;This character has reached the pinnacle of waterbending healing and possesses the ability to bring people back from the brink of death itself.;;;;;;;;;;;x
 bloodbender;Bloodbender;;;;;;;;;;;x
 bloodbender_desc;Bloodbending is one of the most potent and advanced waterbending techniques. Through the use of waterbending on a person's bloodstream, this person has gained the ability to control their foes. Anyone who has mastered this form of bending is considered a menace to society and a force to be reckoned with in battle.;;;;;;;;;;;x
 seismicsense;Seismic Sense;;;;;;;;;;;x
@@ -158,8 +160,14 @@ inventor;Inventor;;;;;;;;;;;x
 inventor_desc;This character lives to invent, build, and tinker with machines.;;;;;;;;;;;x
 thief;Thief;;;;;;;;;;;x
 thief_desc;This character spends their life on the street making a dishonest living.;;;;;;;;;;;x
+
+#pirate;5th Nation Remnant;5th Nation Remnant;5th Nation Remnant;;5th Nation Remnant;;;;;;;;;x 
+# TODO - Stocky Kruegar
+
 pirate;Pirate;;;;;;;;;;;x
 pirate_desc;A pirate is feared by most seafaring nations, and this character is one of them.;;;;;;;;;;;x
+
+
 actor;Actor;;;;;;;;;;;x
 actor_desc;Putting on a different face than their own is what makes this character's life worth living.;;;;;;;;;;;x
 has_typhoid_fever;Pentapox;;;;;;;;;;;x
@@ -205,7 +213,7 @@ air_spirit_DESC;The Air Nomads are a deeply spiritual people, rejecting most for
 DaiLiFactMember_desc;This person is a member of the Dai Li, the infamous secret police who control Ba Sing Se from the shadows.;;;;;;;;;;;x
 DaiLiFactMember;Dai Li Member;;;;;;;;;;;x
 DaiLiFactLeader_desc;This person is the Head of the Dai Li, and is perhaps one of the most deadly people in Ba Sing Se.;;;;;;;;;;;x
-DaiLiFactLeader_desc;Head of the Dai Li;;;;;;;;;;;x
+DaiLiFactLeader;Head of the Dai Li;;;;;;;;;;;x
 AdminFactMember_desc;This person is a member of the Bureaucratic faction, one of the many worker ant-flies that keeps the Kingdom running like a well-oiled machine.;;;;;;;;;;;x
 AdminFactMember;Bureaucratic Faction Member;;;;;;;;;;;x
 AdminFactLeader_desc;This person is the leader of the Bureaucrats, and is tasked with maintaining the tax infrastructure of Ba Sing Se and keeping the Kingdom prosperous.;;;;;;;;;;;x

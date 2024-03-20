@@ -4,12 +4,9 @@ TUBERCULOSIS_INFO;Black Frost is loose in this county;;;;;;;;;;;x
 TYPHOID_FEVER_INFO;Pentapox is ravaging in this county.;;;;;;;;;;;x
 TYPHUS_INFO;Takuan Cough is rampant in this county.;;;;;;;;;;;x
 BUBONIC_PLAGUE_INFO;The dark ash of Ash Breath is loose in this county.;;;;;;;;;;;x
-measles;Scorch Blight;;;;;;;;;;;x
 MEASLES_INFO;There is an epidemic of Scorch Blight in this county.;;;;;;;;;;;x
-small_pox;Verminbite;;;;;;;;;;;x
 SMALL_POX_INFO;Verminbite has struck this county, killing almost half of those infected.;;;;;;;;;;;x
-has_bubonic_plague;Has Ashbreath;Atteint de peste;;;;;;;;;;;x;
-has_bubonic_plague_desc;This character has the dreaded Ashbreath.;;;;;;;;;;;x
+
 LIGHT_INFANTRY;Non-Bender Infantry;;;;;;;;;;;x
 LIGHT_INFANTRY_MORALE;Non-Bender Infantry Morale;;;;;;;;;;;x
 LIGHT_INFANTRY_DISCIPLINE;Non-Bender Infantry Discipline;;;;;;;;;;;x
@@ -51,7 +48,7 @@ EVTDESC_RoI_1177;The darkest night of the year is here, the most important night
 EVTOPTA_RoI_1177;Let us celebrate!;;;;;;;;;;;x
 EVTDESC_RoI_166;My [Root.GetLordLady], the guards keeping watch over your white elk-elephant report that they have caught some trespassers. It seems they are members of a rather strange local cult, and they have been stealing the white elk-elephant's dung for worship.;;;;;;;;;;;x
 born_in_the_purple;Born in the Green;;;;;;;;;;;x
-born_in_the_purple_desc;This character is Â§ZBorn in the GreenÂ§!, the child of the ruling Earth Monarch. It is bestowed only to children born in the Palace of Supreme Fertility on the Royal Palace Grounds of the Earth Kingdom. Their succession claim is stronger than that of older siblings born before their parents ascended the Badgermole Throne.;;;;;;;;;;;x
+born_in_the_purple_desc;This character is §GBorn in the Green§! the child of the ruling Earth Monarch. It is bestowed only to children born in the Palace of Supreme Fertility on the Royal Palace Grounds of the Earth Kingdom. Their succession claim is stronger than that of older siblings born before their parents ascended the Badgermole Throne.;;;;;;;;;;;x
 chinese_imperial_government;Earth Monarchy;;;;;;;;;;;x
 EVTDESC94018;History is a subject that has always fascinated you, and you have spent the last few weeks studying the campaigns of Chin the Conqueror. There are many lessons to be learned of his conquest of the Earth Kingdom continent.;;;;;;;;;;;x
 EVTOPTA94018;There is no denying Chin's military genius...;;;;;;;;;;;x

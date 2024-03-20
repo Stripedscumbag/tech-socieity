@@ -33,7 +33,10 @@ targetted_decisions = {
 				hidden_tooltip = {
 					OR = {
 						FROM = {
-							NOT = { religion = the_eternal_flame }
+							NOR = { 
+								religion = the_eternal_flame 
+								religion = the_eternal_flame_reformed
+							}
 						}
 						has_global_flag = eternal_flame_conversion_enabled
 					}
@@ -55,6 +58,7 @@ targetted_decisions = {
 								religion = nomadic_nihilism
 								religion = unificationism
 								religion = way_of_chin
+								religion = way_of_chin_reformed
 							}
 						}
 					}
@@ -65,7 +69,9 @@ targetted_decisions = {
 				hidden_tooltip = {
 					NOR = {
 						religion = children_of_si_wong
+						religion = children_of_si_wong_reformed
 						religion = the_eternal_flame
+						religion = the_eternal_flame_reformed
 						religion = the_great_swamp
 					}
 				}
@@ -94,12 +100,32 @@ targetted_decisions = {
 							religion = bhanti_spirituality
 						}
 						AND = {
+							FROM = { religion = fire_spirituality }
+							religion = bhanti_spirituality_reformed
+						}
+						AND = {
 							FROM = { religion = fire_nation_imperialism }
 							religion = bhanti_spirituality
 						}
 						AND = {
+							FROM = { religion = fire_nation_imperialism }
+							religion = bhanti_spirituality_reformed
+						}
+						AND = {
+							FROM = { religion = fire_spirituality_reformed }
+							religion = bhanti_spirituality
+						}
+						AND = {
+							FROM = { religion = fire_spirituality_reformed }
+							religion = bhanti_spirituality_reformed
+						}
+						AND = {
 							FROM = { religion = ba_sing_se_cultural_heritage }
 							religion = earth_spirituality
+						}
+						AND = {
+							FROM = { religion = ba_sing_se_cultural_heritage }
+							religion = earth_spirituality_reformed
 						}
 					}
 				}
@@ -109,7 +135,10 @@ targetted_decisions = {
 				hidden_tooltip = {
 					OR = {
 						AND = {
-							religion = air_spirituality
+							OR = {
+								religion = air_spirituality
+								religion = air_spirituality_reformed
+							}
 							NAND = {
 								trait = kind
 								trait = temperate
@@ -117,11 +146,17 @@ targetted_decisions = {
 								trait = enlightened
 							}
 						}
-						NOT = { religion = air_spirituality }
+						NOR = { 
+							religion = air_spirituality 
+							religion = air_spirituality_reformed
+						}
 					}
 					OR = {
 						AND = {
-							religion = the_eternal_flame
+							OR = {
+								religion = the_eternal_flame
+								religion = the_eternal_flame_reformed
+							}
 							NAND = {
 								trait = kind
 								trait = temperate
@@ -131,14 +166,23 @@ targetted_decisions = {
 								trait = content
 							}
 						}
-						NOT = { religion = the_eternal_flame  }
+						NOR = { 
+							religion = the_eternal_flame 
+							religion = the_eternal_flame_reformed
+						}
 					}
 					OR = {
 						AND = {
-							religion = followers_of_kyoshi
+							OR = {
+								religion = followers_of_kyoshi
+								religion = followers_of_kyoshi_reformed
+							}
 							NOT = { trait = kyoshiwarrior }
 						}
-						NOT = { religion = followers_of_kyoshi }
+						NOR = { 
+							religion = followers_of_kyoshi 
+							religion = followers_of_kyoshi_reformed
+						}
 					}
 					NOR = {
 						trait = avatar
@@ -174,6 +218,7 @@ targetted_decisions = {
 								OR = {
 									FROM = { religion = fire_nation_imperialism }
 									FROM = { religion = way_of_chin }
+									FROM = { religion = way_of_chin_reformed }
 								}
 								OR = {
 									trait = ambitious
@@ -187,20 +232,32 @@ targetted_decisions = {
 							}
 							AND = {
 								FROM = { religion = nomadic_nihilism }
-								religion = air_spirituality
+								OR = {
+									religion = air_spirituality
+									religion = air_spirituality_reformed
+								}
 								trait = cynical
 							}
 							AND = {
 								FROM = { religion = nomadic_nihilism }
-								religion = air_spirituality
+								OR = {
+									religion = air_spirituality
+									religion = air_spirituality_reformed
+								}
 								trait = kind
 							}
 							AND = {
-								FROM = { religion = fortune_telling }
+								OR = {
+									FROM = { religion = fortune_telling }
+									FROM = { religion = fortune_telling_reformed }
+								}
 								trait = trusting
 							}
 							AND = {
-								FROM = { religion = children_of_si_wong }
+								OR = {
+									FROM = { religion = children_of_si_wong }
+									FROM = { religion = children_of_si_wong_reformed }
+								}
 								culture = sandbender_culture
 							}
 							AND = {

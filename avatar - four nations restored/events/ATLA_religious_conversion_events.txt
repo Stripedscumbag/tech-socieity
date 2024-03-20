@@ -60,15 +60,21 @@ province_event = {
 		OR = {
 			ROOT = { # To Earth Spirituality
 				owner = {
-					religion = earth_spirituality
+					OR = {
+						religion = earth_spirituality
+						religion = earth_spirituality_reformed
+					}
 				}
 				OR = {
 					religion = way_of_chin
+					religion = way_of_chin_reformed
 					religion = followers_of_kyoshi
+					religion = followers_of_kyoshi_reformed
 					religion = the_great_serpent
 					religion = the_divided
 					religion = omashuan_ethics
 					religion = fortune_telling
+					religion = fortune_telling_reformed					
 				}
 				NOT = { province_id = 336 } # Chin Village
 				NOT = { province_id = 389 } # Kyoshi Island
@@ -79,15 +85,21 @@ province_event = {
 			}
 			ROOT = { # To Way of Chin
 				owner = {
-					religion = way_of_chin
+					OR = {
+						religion = way_of_chin
+						religion = way_of_chin_reformed
+					}
 				}
 				OR = {
 					religion = earth_spirituality
+					religion = earth_spirituality_reformed
 					religion = followers_of_kyoshi
+					religion = followers_of_kyoshi_reformed
 					religion = the_great_serpent
 					religion = the_divided
 					religion = omashuan_ethics
 					religion = fortune_telling
+					religion = fortune_telling_reformed					
 				}
 				NOT = { province_id = 389 } # Kyoshi Island
 				NOT = { province_id = 309 } # Omashu
@@ -97,15 +109,21 @@ province_event = {
 			}
 			ROOT = { # To Followers of Kyoshi
 				owner = {
-					religion = followers_of_kyoshi
+					OR = {
+						religion = followers_of_kyoshi
+						religion = followers_of_kyoshi_reformed
+					}
 				}
 				OR = {
 					religion = earth_spirituality
+					religion = earth_spirituality_reformed
 					religion = way_of_chin
+					religion = way_of_chin_reformed
 					religion = the_great_serpent
 					religion = the_divided
 					religion = omashuan_ethics
 					religion = fortune_telling
+					religion = fortune_telling_reformed					
 				}
 				NOT = { province_id = 336 } # Chin Village
 				NOT = { province_id = 309 } # Omashu
@@ -119,11 +137,15 @@ province_event = {
 				}
 				OR = {
 					religion = earth_spirituality
+					religion = earth_spirituality_reformed
 					religion = way_of_chin
+					religion = way_of_chin_reformed
 					religion = followers_of_kyoshi
+					religion = followers_of_kyoshi_reformed
 					religion = the_divided
 					religion = omashuan_ethics
 					religion = fortune_telling
+					religion = fortune_telling_reformed
 				}
 				NOT = { province_id = 336 } # Chin Village
 				NOT = { province_id = 309 } # Omashu
@@ -137,11 +159,15 @@ province_event = {
 				}
 				OR = {
 					religion = earth_spirituality
+					religion = earth_spirituality_reformed
 					religion = way_of_chin
+					religion = way_of_chin_reformed
 					religion = followers_of_kyoshi
+					religion = followers_of_kyoshi_reformed
 					religion = the_great_serpent
 					religion = omashuan_ethics
 					religion = fortune_telling
+					religion = fortune_telling_reformed					
 				}
 				NOT = { province_id = 336 } # Chin Village
 				NOT = { province_id = 309 } # Omashu
@@ -155,11 +181,15 @@ province_event = {
 				}
 				OR = {
 					religion = earth_spirituality
+					religion = earth_spirituality_reformed
 					religion = way_of_chin
+					religion = way_of_chin_reformed
 					religion = followers_of_kyoshi
+					religion = followers_of_kyoshi_reformed
 					religion = the_great_serpent
 					religion = the_divided
 					religion = fortune_telling
+					religion = fortune_telling_reformed
 				}
 				NOT = { province_id = 336 } # Chin Village
 				NOT = { province_id = 251 } # The Great Divide
@@ -169,12 +199,18 @@ province_event = {
 			}
 			ROOT = { # To Fortune Telling
 				owner = {
-					religion = fortune_telling
+					OR = {
+						religion = fortune_telling 
+						religion = fortune_telling_reformed
+					}
 				}
 				OR = {
 					religion = earth_spirituality
+					religion = earth_spirituality_reformed
 					religion = way_of_chin
+					religion = way_of_chin_reformed
 					religion = followers_of_kyoshi
+					religion = followers_of_kyoshi_reformed
 					religion = the_great_serpent
 					religion = the_divided
 					religion = omashuan_ethics
@@ -187,11 +223,16 @@ province_event = {
 			}
 			ROOT = { # To Fire Spirituality
 				owner = {
-					religion = fire_spirituality
+					OR = {
+						religion = fire_spirituality
+						religion = fire_spirituality_reformed
+					}
 				}
 				OR = {
 					religion = the_eternal_flame
+					religion = the_eternal_flame_reformed
 					religion = bhanti_spirituality
+					religion = bhanti_spirituality_reformed
 				}
 			}
 			ROOT = { # To Fire Imperialism
@@ -200,25 +241,37 @@ province_event = {
 				}
 				OR = {
 					religion = the_eternal_flame
+					religion = the_eternal_flame_reformed
 					religion = bhanti_spirituality
+					religion = bhanti_spirituality_reformed
 				}
 			}
 			ROOT = { # To Eternal Flame
 				owner = {
-					religion = the_eternal_flame
+					OR = {
+						religion = the_eternal_flame
+						religion = the_eternal_flame_reformed
+					}
 				}
 				OR = {
 					religion = fire_spirituality
+					religion = fire_spirituality_reformed
 					religion = bhanti_spirituality
+					religion = bhanti_spirituality_reformed
 				}
 			}
 			ROOT = { # To Bhanti Spirituality
 				owner = {
-					religion = bhanti_spirituality
+					OR = {
+						religion = bhanti_spirituality
+						religion = bhanti_spirituality_reformed
+					}
 				}
 				OR = {
 					religion = fire_spirituality
+					religion = fire_spirituality_reformed
 					religion = the_eternal_flame
+					religion = the_eternal_flame_reformed
 				}
 			}
 		}
@@ -261,7 +314,10 @@ province_event = {
 		}
 		modifier = {
 			factor = 1.5
-			religion = the_eternal_flame
+			OR = {
+				religion = the_eternal_flame
+				religion = the_eternal_flame_reformed
+			}
 		}
 	}
 

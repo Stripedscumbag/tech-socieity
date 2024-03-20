@@ -28,12 +28,16 @@ decisions = {
 		}
 		
 		allow = {
-			NOT = { religion = way_of_chin }
-			NOT = { religion = fire_nation_imperialism }
-			NOT = { religion = piracy }
+			NOR = { 
+				religion = way_of_chin
+				religion = way_of_chin_reformed
+				religion = fire_nation_imperialism
+				religion = piracy 
+			}
 		}
 		
 		effect = {
+			log = "[Root.GetFullName] summoned the Avatar to help with a revolt."
 			set_character_flag = avatar_aid
 			d_avatar = {
 				owner = {

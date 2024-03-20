@@ -181,7 +181,7 @@ e_ji = {
 				holy_site = omashuan_ethics
 				# holy_site = omashuan_ethics_reformed
 				holy_site = way_of_chin
-				# holy_site = way_of_chin_reformed
+				holy_site = way_of_chin_reformed
 
 				title = "magistrate"
 				title_female = "magistrate"
@@ -2421,7 +2421,7 @@ e_xin = {
 				holy_site = earth_monarchism
 				# holy_site = earth_monarchism_reformed
 				holy_site = air_spirituality
-				# holy_site = air_spirituality_reformed
+				holy_site = air_spirituality_reformed
 
 				b_yu_dao = {
 					republic_city = "Old Yu Dao"
@@ -2539,7 +2539,7 @@ e_xin = {
 				color2 = { 255 255 255 }
 
 				holy_site = way_of_chin
-				# holy_site = way_of_chin_reformed
+				holy_site = way_of_chin_reformed
 
 				b_dagong = {
 				}
@@ -2698,7 +2698,7 @@ e_xin = {
 				color2 = { 255 255 255 }
 
 				holy_site = way_of_chin
-				# holy_site = way_of_chin_reformed
+				holy_site = way_of_chin_reformed
 
 				b_garsai = {
 				}
@@ -3421,14 +3421,20 @@ e_nanzhou = {
 		culture = earth_islander
 
 		allow = {
-			religion = followers_of_kyoshi
+			OR = {
+				religion = followers_of_kyoshi
+				religion = followers_of_kyoshi_reformed
+			}
 		}
 
 		d_kyoshi_island = {
 			color = { 31 178 109 }
 			color2 = { 255 255 255 }
 			allow = {
-				religion = followers_of_kyoshi
+				OR = {
+					religion = followers_of_kyoshi
+					religion = followers_of_kyoshi_reformed
+				}
 			}
 			capital = 389 # c_kyoshi_island
 
@@ -3437,7 +3443,7 @@ e_nanzhou = {
 				color2 = { 255 255 255 }
 
 				holy_site = way_of_chin
-				# holy_site = way_of_chin_reformed
+				holy_site = way_of_chin_reformed
 				holy_site = followers_of_kyoshi
 				holy_site = followers_of_kyoshi_reformed
 				holy_site = unificationism
@@ -4632,7 +4638,7 @@ e_nanzhou = {
 				color2 = { 255 255 255 }
 
 				holy_site = way_of_chin
-				# holy_site = way_of_chin_reformed
+				holy_site = way_of_chin_reformed
 				holy_site = followers_of_kyoshi
 				holy_site = followers_of_kyoshi_reformed
 

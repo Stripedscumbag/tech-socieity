@@ -306,6 +306,323 @@ free_tributary_not_a_pirate	 = {
 	}
 }
 
+cb_pirate_tributary = {
+	name = CB_PIRATE_TRIBUTARY
+	war_name = PIRATE_TRIBUTARY
+	sprite = 12
+	truce_days = 1825
+	hostile_against_others = yes
+	is_permanent = yes
+	check_all_titles = yes
+	can_ask_to_join_war = no
+
+	allow_distant = yes
+	allowed_to_target_tributaries = no
+
+	sort_priority = 2000
+
+	can_use = {
+		ROOT = {
+			OR = {
+				government = lawless_piracy
+				government = pirate_cartel
+			}
+			NOT = { same_realm = FROM }
+		}
+		FROM = {
+			NOT = { religion = ROOT }
+		}
+	}
+
+	can_use_title = {
+		tier = count
+		OR = {
+			FROM = {
+				has_landed_title = PREV
+			}
+			holder_scope = {
+				is_liege_or_above = FROM
+				NOT = { same_realm = ROOT }
+			}
+		}
+
+		NOT = {
+			OR = {
+				ROOT = {
+					has_landed_title = PREV
+				}
+				holder_scope = {
+					is_liege_or_above = ROOT
+				}
+			}
+		}
+		OR = {
+			ROOT = { government = lawless_piracy }
+			ROOT = { government = pirate_cartel }
+		}
+		location = {
+			port = yes
+		}
+	}
+
+	is_valid_title = {
+		OR = {
+			ROOT = {
+				is_nomadic = yes
+			}
+			AND = {
+				ROOT = {
+					OR = {
+						government = lawless_piracy
+						government = pirate_cartel
+					}
+					NOT = { same_realm = FROM }
+				}
+				FROM = {
+					NOT = { religion = ROOT }
+				}
+			}
+		}
+
+		OR = {
+			FROM = {
+				has_landed_title = PREV
+			}
+			holder_scope = {
+				is_liege_or_above = FROM
+			}
+		}
+	}
+
+	on_add = {
+		hidden_tooltip = { fire_haruspicy_event_effect = yes }
+	}
+
+	on_success_title = { #winning the war
+
+		FROM = {
+			transfer_scaled_wealth = {
+				to = ROOT
+				value = 1
+			}
+		}
+
+		if = {
+			limit = {
+				ROOT = { government = lawless_piracy }
+			}
+			custom_tooltip = {
+				text = religious_liberation_cb_succ_tip
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					has_global_flag = black_market_established
+				}
+				custom_tooltip = {
+					text = pirate_cartel_takeover_culture
+				}
+			}
+			else = {
+				custom_tooltip = {
+					text = pirate_cartel_takeover
+				}
+			}
+		}
+
+		hidden_tooltip = {
+			create_character = {
+				religion = ROOT
+				dynasty = random
+				random_traits = yes
+				female = no
+				age = 20
+				health = 7
+				fertility = 0.7
+				culture = pirate
+				attributes = {
+					martial = 15
+					diplomacy = 10
+					stewardship = 5
+				}
+				flag = is_religious_liberation_ruler
+			}
+			new_character = {
+				remove_trait = content
+				add_trait = ambitious
+				add_trait = pirate_trait
+				wealth = 500
+				prestige = 500
+				piety = 500
+				save_event_target_as = new_ruler
+				usurp_title_plus_barony_if_unlanded = { target = PREV type = invasion }
+			}
+
+			ROOT = {
+				if = {
+					limit = {
+						OR = {
+							government = lawless_piracy
+							NOT = { tier = DUKE }
+						}
+					}
+					make_tributary = { who = event_target:new_ruler tributary_type = pirate_tributary }
+					event_target:new_ruler = { set_defacto_liege = event_target:new_ruler }
+				}
+				else = {
+					event_target:new_ruler = { 
+						set_defacto_liege = ROOT
+						if = {
+							limit = {
+								has_global_flag = black_market_established
+							}
+							any_demesne_province = {
+								culture = ROOT
+							}
+						}
+					}
+				}
+			}
+
+			any_de_jure_vassal_title = {
+				limit = {
+					has_holder = yes
+					holder_scope = {
+						OR = {
+							character = FROM
+							is_liege_or_above = FROM
+							AND = {
+								is_liege_or_above = ROOT
+								NOT = { culture = ROOT }
+								NOT = { religion = ROOT }
+							}
+						}
+					}
+				}
+				show_scope_change = no
+				event_target:new_ruler = {
+					usurp_title_plus_barony_if_unlanded = { target = PREV type = invasion }
+				}
+			}
+		}
+
+		ROOT = {
+			show_scope_change = no
+			participation_scaled_prestige = 100
+			participation_scaled_piety = 50
+		}
+		any_attacker = {
+			limit = { NOT = { character = ROOT } }
+			hidden_tooltip = { 
+				participation_scaled_prestige = 100 
+				participation_scaled_piety = 50
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = { FROM = { religion = ROOT } }
+			}
+			ROOT = {
+				show_scope_change = no
+				religion_authority = {
+					modifier = plundered_a_county
+				}
+			}
+		}
+	}
+
+	on_fail_title = { #white peace
+		ROOT = {
+			show_scope_change = no
+			prestige = -100
+		}
+
+		if = {
+			limit = {
+				NOT = { FROM = { religion = ROOT } }
+			}
+			ROOT = {
+				show_scope_change = no
+				religion_authority = {
+					modifier = lost_county_conquest
+				}
+			}
+		}
+
+		FROM = {
+			show_scope_change = no
+			participation_scaled_prestige = 50
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 50 }
+		}
+
+		#To handle Warrior Lodge mission "Wage War" completion...
+		attacker = { save_event_target_as = attacker_target }
+		defender = { save_event_target_as = defender_target }
+
+	}
+
+	on_reverse_demand = { #losing the war
+		ROOT = {
+			show_scope_change = no
+			prestige = -200
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 4.0
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = { FROM = { religion = ROOT } }
+			}
+			ROOT = {
+				show_scope_change = no
+				religion_authority = {
+					modifier = lost_county_conquest
+				}
+			}
+		}
+
+		FROM = {
+			show_scope_change = no
+			participation_scaled_prestige = 100
+			participation_scaled_piety = 50
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = {
+				participation_scaled_prestige = 100 
+				participation_scaled_piety = 50
+			}
+		}
+	}
+
+	attacker_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+
+	defender_ai_defeat_worth = {
+		factor = 100
+	}
+
+	ai_will_do = { 
+		factor = 1000
+	}
+}
+
 cb_slave_colony = {
 	name = CB_SLAVE_COLONY
 	war_name = SLAVE_COLONY
@@ -1510,7 +1827,10 @@ chin_county_conquest = {
 	can_use = {
 		ROOT = {
 			mercenary = no
-			religion = way_of_chin
+			OR = {
+				religion = way_of_chin
+				religion = way_of_chin_reformed
+			}
 			trait = warlord_of_chin
 		}
 	}
@@ -1587,7 +1907,10 @@ chin_county_conquest = {
 
 	is_valid = {
 		ROOT = {
-			religion = way_of_chin
+			OR = {
+				religion = way_of_chin
+				religion = way_of_chin_reformed
+			}
 			NOT = { same_realm = FROM }
 		}
 	}
@@ -3179,14 +3502,22 @@ water_offensive = {
 	check_de_jure_tier = DUKE
 
 	can_use_gui = {
+		has_global_flag = begin_watertribe_offensive
 		ROOT = {
-			has_dynasty_flag = wt_1
+			OR = {
+				religion = tui_and_la
+				religion = tui_and_la_reformed
+			}
 		}
 	}
 
 	can_use = {
+		has_global_flag = begin_watertribe_offensive
 		ROOT = {
-			has_dynasty_flag = wt_1
+			OR = {
+				religion = tui_and_la
+				religion = tui_and_la_reformed
+			}
 			NOT = { same_realm = FROM }
 			NOT = { religion = FROM }
 		}
@@ -3233,6 +3564,7 @@ water_offensive = {
 		FROM = { piety = -100 }
 		FROM = { prestige = -50 }
 	}
+	
 
 	on_success_title = {
 		custom_tooltip = {
@@ -3249,6 +3581,12 @@ water_offensive = {
 				}
 			}
 		}
+		
+		ROOT = {
+			religion_authority = {
+				modifier = won_county_conquest
+			}
+		}
 
 		hidden_tooltip = {
 			ROOT = {
@@ -3257,6 +3595,27 @@ water_offensive = {
 			}
 		}
 	}
+	
+	on_fail_title = {
+		ROOT = {
+			prestige = -100
+		}
+
+		any_defender = {
+			limit = { character = FROM }
+			participation_scaled_prestige = 50
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 50 }
+		}
+		
+		ROOT = {
+			religion_authority = {
+				modifier = lost_county_conquest
+			}
+		}		
+	}	
 
 	on_reverse_demand = {
 		ROOT = {
@@ -3277,6 +3636,12 @@ water_offensive = {
 				participation_scaled_prestige = 100
 			}
 		}
+		
+		ROOT = {
+			religion_authority = {
+				modifier = lost_county_conquest
+			}
+		}		
 	}
 
 	attacker_ai_victory_worth = {
